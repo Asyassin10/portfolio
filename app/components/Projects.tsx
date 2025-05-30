@@ -8,10 +8,6 @@ import SectionHeading from "./SectionHeading"
 interface Repository {
   id: number
   name: string
-  description: string
-  stars: number
-  forks: number
-  watchers: number
   language: string
   url: string
   tags: string[]
@@ -119,75 +115,24 @@ export default function Projects() {
   const repositories: Repository[] = [
     {
       id: 1,
-      name: "laravel-clean-architecture",
-      description:
-        "A Laravel implementation of Clean Architecture principles with domain-driven design patterns and SOLID principles.",
-      stars: 342,
-      forks: 87,
-      watchers: 45,
+      name: "laravel-facade-generator ",
       language: "PHP",
-      url: "https://github.com/username/laravel-clean-architecture",
-      tags: ["Laravel", "Clean Architecture", "DDD", "SOLID"],
+      url: "https://github.com/Asyassin10/laravel-facade-generator",
+      tags: ["Laravel", "Clean Architecture"],
     },
     {
       id: 2,
-      name: "symfony-microservices",
-      description:
-        "A collection of microservices built with Symfony, using RabbitMQ for message queuing and API Platform for RESTful APIs.",
-      stars: 215,
-      forks: 63,
-      watchers: 32,
-      language: "PHP",
+      name: "Moroccan-ID-OCR-Scanner",
+      language: "Python",
       url: "https://github.com/username/symfony-microservices",
-      tags: ["Symfony", "Microservices", "RabbitMQ", "API Platform"],
+      tags: ["Flask", "Microservices", "Docker", "EasyOcr"],
     },
     {
       id: 3,
-      name: "angular-dashboard-template",
-      description:
-        "A responsive dashboard template built with Angular and NgRx, featuring dynamic charts, tables, and authentication.",
-      stars: 178,
-      forks: 42,
-      watchers: 28,
-      language: "TypeScript",
+      name: "laravel-s3-db-backup",
+      language: "PHP",
       url: "https://github.com/username/angular-dashboard-template",
-      tags: ["Angular", "NgRx", "Dashboard", "TypeScript"],
-    },
-    {
-      id: 4,
-      name: "payment-gateway-integration",
-      description:
-        "A library for integrating multiple payment gateways (Stripe, PayPal, etc.) with a unified API for e-commerce applications.",
-      stars: 124,
-      forks: 35,
-      watchers: 18,
-      language: "PHP",
-      url: "https://github.com/username/payment-gateway-integration",
-      tags: ["Payments", "Stripe", "PayPal", "E-commerce"],
-    },
-    {
-      id: 5,
-      name: "document-validation-system",
-      description:
-        "A document validation system with electronic signature capabilities, built for legal professionals.",
-      stars: 97,
-      forks: 24,
-      watchers: 15,
-      language: "JavaScript",
-      url: "https://github.com/username/document-validation-system",
-      tags: ["Document Validation", "Electronic Signatures", "Legal Tech"],
-    },
-    {
-      id: 6,
-      name: "social-media-scheduler",
-      description:
-        "A platform for scheduling and managing social media posts across multiple platforms with analytics.",
-      stars: 85,
-      forks: 19,
-      watchers: 12,
-      language: "PHP",
-      url: "https://github.com/username/social-media-scheduler",
-      tags: ["Social Media", "Laravel", "OAuth", "API Integration"],
+      tags: ["PHP", "AWS"],
     },
   ]
 
@@ -227,7 +172,7 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <a
-            href="https://github.com/username"
+            href="https://github.com/Asyassin10?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-indigo-500/30"

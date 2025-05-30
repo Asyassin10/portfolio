@@ -9,7 +9,6 @@ import SectionHeading from "./SectionHeading"
 interface DockerImage {
   id: number
   name: string
-  description: string
   url: string
   tags: string[]
   pullCommand: string
@@ -105,17 +104,13 @@ export default function DockerHubImages() {
     {
       id: 1,
       name: "yassine374/kabord-bard",
-      description:
-        "A containerized AI chatbot application built with modern web technologies, featuring real-time conversation capabilities and intelligent response generation.",
       url: "https://hub.docker.com/r/yassine374/kabord-bard",
-      tags: ["AI", "Chatbot", "Node.js", "Real-time"],
+      tags: ["Laravel", "MySql"],
       pullCommand: "docker pull yassine374/kabord-bard:latest",
     },
     {
       id: 2,
       name: "yassine374/moroccan-id-ocr",
-      description:
-        "OCR scanner specifically designed for Moroccan national ID cards, built with Python, Flask, and EasyOCR for accurate text extraction and data processing.",
       url: "https://hub.docker.com/repository/docker/yassine374/moroccan-id-ocr/general",
       tags: ["OCR", "Python", "Flask", "EasyOCR", "Morocco"],
       pullCommand: "docker pull yassine374/moroccan-id-ocr:latest",

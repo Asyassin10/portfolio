@@ -104,30 +104,30 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.8 }}
             >
               <a
-                href="https://www.linkedin.com/in/sai-pranay-tadakamalla-7570bb1a6/"
+                href="https://www.linkedin.com/in/yassine-ait-sidi-brahim/"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
-                aria-label="LinkedIn Profile"
+                aria-label="LinkedIn Profile" target="__blank"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="mailto:pranaytadakamalla@gmail.com"
+                href="mailto:yassineaitsidibrahim@gmail.com"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-red-600 hover:border-red-500 transition-all duration-300"
-                aria-label="Email Contact"
+                aria-label="Email Contact" 
               >
                 <Mail className="w-6 h-6" />
               </a>
               <a
-                href="https://github.com/PranayTadakamalla/"
+                href="https://github.com/Asyassin10/"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-gray-600 hover:border-gray-500 transition-all duration-300"
-                aria-label="GitHub Profile"
+                aria-label="GitHub Profile" target="__blank"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
                 href="https://yassineaitsidibrahim.medium.com/"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-green-600 hover:border-green-500 transition-all duration-300"
-                aria-label="Medium Profile"
+                aria-label="Medium Profile" target="__blank"
               >
                 <BookOpen className="w-6 h-6" />
               </a>

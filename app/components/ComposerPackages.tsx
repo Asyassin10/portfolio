@@ -183,15 +183,6 @@ export default function ComposerPackages() {
             <Code className="w-4 h-4 ml-1" />
           </a>
 
-          <a
-            href="https://github.com/yassine-as"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-indigo-500/30"
-          >
-            View GitHub Profile
-            <Github className="w-4 h-4 ml-1" />
-          </a>
         </motion.div>
       </div>
     </section>

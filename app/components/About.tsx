@@ -101,61 +101,61 @@ export default function About() {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["TypeScript", "PHP", "C#", "...etc"],
+      skills: ["JavaScript","TypeScript", "PHP", "C#"],
       color: "blue",
       icon: Code,
     },
     {
       title: "Frontend Development",
-      skills: ["React.js", "Angular", "jQuery", "Bootstrap", "Tailwind CSS", "...etc"],
+      skills: ["React.js", "Angular", "jQuery", "Bootstrap", "Tailwind CSS"],
       color: "green",
       icon: Palette,
     },
     {
       title: "Backend Frameworks",
-      skills: ["Laravel", "Symfony", "...etc"],
+      skills: ["Laravel", "Symfony"],
       color: "purple",
       icon: Server,
     },
     {
       title: "Databases & Storage",
-      skills: ["MySQL", "PostgreSQL", "Redis", "Amazon S3", "...etc"],
+      skills: ["MySQL", "PostgreSQL", "Redis", "Amazon S3"],
       color: "red",
       icon: Database,
     },
     {
       title: "DevOps & Containerization",
-      skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions", "...etc"],
+      skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions"],
       color: "cyan",
       icon: Container,
     },
     {
       title: "Testing & Quality Assurance",
-      skills: ["Selenium", "Cypress", "SonarQube", "Sonarscan", "...etc"],
+      skills: ["Selenium", "Cypress", "SonarQube", "Sonarscan", "Covrage", "Unit testing"],
       color: "pink",
       icon: TestTube,
     },
     {
       title: "APIs & Real-time Communication",
-      skills: ["WebSocket", "REST APIs", "AJAX", "Swagger", "...etc"],
+      skills: ["WebSocket", "REST APIs", "AJAX", "Swagger"],
       color: "yellow",
       icon: Globe,
     },
     {
       title: "Project Management",
-      skills: ["Jira", "Trello", "Kanban", "...etc"],
+      skills: ["Jira", "Trello", "Kanban"],
       color: "indigo",
       icon: Kanban,
     },
     {
       title: "Systems & Infrastructure",
-      skills: ["Linux", "...etc"],
+      skills: ["Linux"],
       color: "teal",
       icon: Monitor,
     },
     {
       title: "Software Architecture",
-      skills: ["Microservices", "SDKs", "...etc"],
+      skills: ["Microservices", "SDKs"],
       color: "violet",
       icon: Building,
     },
@@ -187,8 +187,7 @@ export default function About() {
               </div>
 
               <p className="text-xl text-slate-300 leading-relaxed">
-                Curiosity has been my guide from day one. I started by creating custom websites and solutions, gradually
-                expanding into designing software and improving workflows. Always eager to learn and grow.
+              With 4 years of hands-on experience, curiosity has been my guide from day one. I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows. I’m always eager to learn, improve, and deliver better results
               </p>
             </div>
           </motion.div>
