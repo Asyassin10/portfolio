@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
               <a
                 href="mailto:yassineaitsidibrahim@gmail.com"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-red-600 hover:border-red-500 transition-all duration-300"
-                aria-label="Email Contact" 
+                aria-label="Email Contact"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
             >
               <a
-                href="https://drive.google.com/file/d/1YWAF3xAKdwQ-z4VdJp4nUTsH8UJTSz2m/view?usp=sharing"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
