@@ -101,7 +101,7 @@ export default function About() {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["JavaScript","TypeScript", "PHP", "C#"],
+      skills: ["JavaScript", "TypeScript", "PHP", "C#"],
       color: "blue",
       icon: Code,
     },
@@ -155,7 +155,7 @@ export default function About() {
     },
     {
       title: "Software Architecture",
-      skills: ["Microservices", "SDKs"],
+      skills: ["Microservices", "SDKs."],
       color: "violet",
       icon: Building,
     },
@@ -187,7 +187,7 @@ export default function About() {
               </div>
 
               <p className="text-xl text-slate-300 leading-relaxed">
-              With 4 years of hands-on experience, curiosity has been my guide from day one. I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows. I’m always eager to learn, improve, and deliver better results
+                With 4 years of hands-on experience, curiosity has been my guide from day one. I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows. I’m always eager to learn, improve, and deliver better results
               </p>
             </div>
           </motion.div>
