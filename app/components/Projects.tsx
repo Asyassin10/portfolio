@@ -124,14 +124,14 @@ export default function Projects() {
       id: 2,
       name: "Moroccan-ID-OCR-Scanner",
       language: "Python",
-      url: "https://github.com/username/symfony-microservices",
+      url: "https://github.com/Asyassin10/Moroccan-ID-OCR-Scanner",
       tags: ["Flask", "Microservices", "Docker", "EasyOcr"],
     },
     {
       id: 3,
       name: "laravel-s3-db-backup",
       language: "PHP",
-      url: "https://github.com/username/angular-dashboard-template",
+      url: "https://github.com/Asyassin10/laravel-s3-db-backup",
       tags: ["PHP", "AWS"],
     },
   ]
