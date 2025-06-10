@@ -235,7 +235,7 @@ export default function Projects() {
     {
       id: 6,
       name: "Comptexpert",
-      description: "Développement d'une solution Laravel pour l'Ordre des Experts-Comptables, intégrant une plateforme e-commerce optimisée et une authentification sécurisée via CAS.",
+      description: "Développement d'une solution Laravel pour l'Ordre des Experts-Comptables, intégrant un comparateur de logiciels comptables et une authentification sécurisée via CAS.",
       url: "https://www.experts-comptables.fr",
       backgroundImage: "https://www.experts-comptables.fr/sites/default/files/styles/csoec_12/public/assets/images/Ecran%20comptexpert%202023.jpg?itok=3Eh0Uvw8",
       tags: []
