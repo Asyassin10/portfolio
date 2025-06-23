@@ -104,7 +104,7 @@ export default function Home() {
     <main className="bg-slate-950 min-h-screen">
       <ThreeScene />
       <div className="pt-24 container mx-auto px-6">
-        <SpartaBanner />
+        {/* <SpartaBanner /> */}
       </div>
       <Hero />
       <About />
