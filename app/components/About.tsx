@@ -98,68 +98,73 @@ const SkillCategory = ({
 }
 
 export default function About() {
-  const skillCategories = [
-    {
-      title: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "PHP", "C#"],
-      color: "blue",
-      icon: Code,
-    },
-    {
-      title: "Frontend Development",
-      skills: ["React.js", "Angular", "jQuery", "Bootstrap", "Tailwind CSS"],
-      color: "green",
-      icon: Palette,
-    },
-    {
-      title: "Backend Frameworks",
-      skills: ["Laravel", "Symfony"],
-      color: "purple",
-      icon: Server,
-    },
-    {
-      title: "Databases & Storage",
-      skills: ["MySQL", "PostgreSQL", "Redis", "Amazon S3"],
-      color: "red",
-      icon: Database,
-    },
-    {
-      title: "DevOps & Containerization",
-      skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions"],
-      color: "cyan",
-      icon: Container,
-    },
-    {
-      title: "Testing & Quality Assurance",
-      skills: ["Selenium", "Cypress", "SonarQube", "Sonarscan", "Covrage", "Unit testing"],
-      color: "pink",
-      icon: TestTube,
-    },
-    {
-      title: "APIs & Real-time Communication",
-      skills: ["WebSocket", "REST APIs", "AJAX", "Swagger"],
-      color: "yellow",
-      icon: Globe,
-    },
-    {
-      title: "Project Management",
-      skills: ["Jira", "Trello", "Kanban"],
-      color: "indigo",
-      icon: Kanban,
-    },
-    {
-      title: "Systems & Infrastructure",
-      skills: ["Linux"],
-      color: "teal",
-      icon: Monitor,
-    },
-    {
-      title: "Software Architecture",
-      skills: ["Microservices", "SDKs."],
-      color: "violet",
-      icon: Building,
-    },
-  ]
+const skillCategories = [
+  {
+    title: "Programming Languages",
+    skills: ["JavaScript", "TypeScript", "PHP", "Java", "Python"],
+    color: "blue",
+    icon: Code,
+  },
+  {
+    title: "Frontend Development",
+    skills: ["React.js", "Nextjs", "Bootstrap", "Tailwind CSS"],
+    color: "green",
+    icon: Palette,
+  },
+  {
+    title: "Backend Frameworks",
+    skills: ["Laravel", "Symfony", "Spring Boot"],
+    color: "purple",
+    icon: Server,
+  },
+  {
+    title: "Databases & Storage",
+    skills: ["MySQL", "PostgreSQL", "Redis", "Amazon S3"],
+    color: "red",
+    icon: Database,
+  },
+      {
+    title: "AI & LLMs",
+skills: [
+  "Large Language Models (LLMs)",
+  "LangChain",
+  "RAG (Retrieval-Augmented Generation)",
+  "Text Embeddings",
+  "Vector Databases",
+  "Cosine Similarity",
+  "Dot Product Search"
+],
+    color: "orange",
+    icon: Brain, 
+  },
+  {
+    title: "DevOps & Containerization",
+    skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions"],
+    color: "cyan",
+    icon: Container,
+  },
+  {
+    title: "Testing & Quality Assurance",
+    skills: ["Selenium", "Cypress", "SonarQube", "Sonarscan", "Coverage", "Unit testing"],
+    color: "pink",
+    icon: TestTube,
+  },
+
+  {
+    title: "Project Management",
+    skills: ["Jira", "Trello", "Kanban"],
+    color: "indigo",
+    icon: Kanban,
+  },
+  {
+    title: "Systems & Software Architecture",
+    skills: ["Linux","Microservices", "SDKs"],
+    color: "teal",
+    icon: Monitor,
+  }
+
+];
+
 
   return (
     <section id="about" className="py-20 relative overflow-hidden bg-slate-950">
