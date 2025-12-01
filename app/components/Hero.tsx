@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.8 }}
             >
               <a
-                href="https://www.linkedin.com/in/yassine-ait-sidi-brahim/"
+                href="https://www.linkedin.com/in/yassine-aitsidibrahim/"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
                 aria-label="LinkedIn Profile" target="__blank"
               >
