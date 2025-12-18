@@ -113,7 +113,7 @@ const skillCategories = [
   },
   {
     title: "Backend Frameworks",
-    skills: ["Laravel", "Symfony", "Spring Boot"],
+    skills: ["Laravel", "Symfony", "Spring Boot","Spring Cloud"],
     color: "purple",
     icon: Server,
   },
