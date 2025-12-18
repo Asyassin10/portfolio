@@ -235,21 +235,13 @@ export default function Projects() {
   const repositories: Repository[] = [
 
     {
-      id: 2,
-      name: "Moroccan-ID-OCR-Scanner",
-      language: "Python",
-      url: "https://github.com/Asyassin10/Moroccan-ID-OCR-Scanner",
-      tags: ["Flask", "Microservices", "Docker", "EasyOcr"],
-      description: "Scanner OCR pour cartes d'identité marocaines utilisant l'intelligence artificielle.",
-    },
-    {
-      id: 3,
-      name: "laravel-s3-db-backup",
-      language: "PHP",
-      url: "https://github.com/Asyassin10/laravel-s3-db-backup",
-      tags: ["PHP", "AWS"],
-      description: "Solution de sauvegarde automatique des bases de données Laravel vers Amazon S3.",
-    },
+  id: 1,
+  name: "voice-ai-assistant",
+  language: "Python",
+  url: "https://github.com/Asyassin10/voice-ai-assistant",
+  tags: ["Whisper STT", "LLM", "Kokoro TTS", "Qdrant", "RAG"],
+  description: "Multilingual voice assistant (French & Arabic) using Whisper STT, local LLM, Kokoro TTS, and Qdrant for context-aware responses.",
+},
   ]
 
   // Web projects data - Eadgequery marked as featured
