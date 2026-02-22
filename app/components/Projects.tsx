@@ -169,11 +169,11 @@ const WebProjectCard = ({ project, index }: { project: WebProject; index: number
         )}
 
         {/* Project Image */}
-        <div className="relative h-48 overflow-hidden">
-          <img 
+        <div className="relative h-48 overflow-hidden rounded-t-2xl">
+          <img
             src={project.backgroundImage}
             alt={project.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-t-2xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
           

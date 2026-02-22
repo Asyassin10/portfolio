@@ -140,9 +140,8 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
             >
               <a
-                href="https://drive.google.com/file/d/12BlOLOdWh9JFnygdcyuHvuCQPRTHP15d/view"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/yassine_ait_sidi_brahim_cv.pdf"
+                download="yassine_ait_sidi_brahim_cv.pdf"
                 className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <span>Download Resume</span>

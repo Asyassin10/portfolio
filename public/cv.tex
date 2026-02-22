@@ -1,0 +1,150 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\geometry{a4paper, top=0.4in, bottom=0.4in, left=0.5in, right=0.5in}
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=0pt, parsep=0pt, itemsep=2pt}
+
+\definecolor{headercolor}{RGB}{44, 62, 80}
+\definecolor{sectioncolor}{RGB}{52, 73, 94}
+\definecolor{linkcolor}{RGB}{41, 128, 185}
+
+\titleformat{\section}{\color{sectioncolor}\large\bfseries}{}{0em}{}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{6pt}
+
+\titleformat{\subsection}{\color{headercolor}\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{4pt}{1pt}
+
+\hypersetup{colorlinks=true, linkcolor=linkcolor, urlcolor=linkcolor}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% ── HEADER ──────────────────────────────────────────────────────────────────
+\begin{center}
+    {\huge\color{headercolor}\textbf{Yassine Ait Sidi Brahim}}\\[2pt]
+    {\large\color{sectioncolor}Full-Stack Software Developer}\\[4pt]
+    {\small
+      Casablanca, Morocco \quad\textbar\quad
+      +212 670-237509 \quad\textbar\quad
+      yassineaitsidibrahim@gmail.com
+    }\\[2pt]
+    {\small
+      \href{https://www.linkedin.com/in/yassine-aitsidi-brahim/}{LinkedIn} \quad\textbar\quad
+      \href{https://github.com/Asyassin10}{GitHub} \quad\textbar\quad
+      \href{https://yassineaitsidibrahim.medium.com/}{Medium} \quad\textbar\quad
+      \href{https://www.yassine-aitsidibrahim.space/}{Portfolio}
+    }
+\end{center}
+
+\vspace{2pt}
+
+% ── PROFILE ─────────────────────────────────────────────────────────────────
+\section*{Profile}
+{\small
+I'm Yassine, a software engineer with 4 years of experience designing and developing end-to-end digital solutions -- from web and mobile applications to advanced software systems that balance performance and innovation. My true passion lies in AI, particularly Large Language Models, machine learning pipelines, RAG systems, and MLOps. I love exploring how AI thinks and learns, building systems that don't just integrate AI but truly leverage its inner workings to solve real problems.
+}
+
+% ── TECHNICAL SKILLS ────────────────────────────────────────────────────────
+\section*{Technical Skills}
+{\small
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Languages:} JavaScript, TypeScript, PHP, Java, Python
+  \item \textbf{Frontend:} React.js, Bootstrap, Tailwind CSS
+  \item \textbf{Backend:} Laravel, Spring Boot, Symfony
+  \item \textbf{Databases:} MySQL, PostgreSQL, Vector Databases (Qdrant)
+  \item \textbf{Cloud \& DevOps:} AWS (S3), Docker, Podman, Git, GitHub Actions, CI/CD
+  \item \textbf{Testing \& Quality:} Unit Testing, Playwright, SonarQube
+  \item \textbf{Architecture:} Microservices, REST APIs, Event-Driven Architecture (Kafka)
+  \item \textbf{AI \& LLMs:} RAG, LangChain, Prompt Engineering, Embeddings, MCP (Model Context Protocol)
+  \item \textbf{Project Management:} Jira, Trello, Kanban, Agile
+\end{itemize}
+}
+
+% ── EXPERIENCE ──────────────────────────────────────────────────────────────
+\section*{Professional Experience}
+
+\subsection*{Full-Stack Software Engineer}
+{\small \textbf{Pillot} \textbar\ Casablanca, Morocco \textbar\ Jan 2026 -- Present}
+\vspace{2pt}
+\begin{itemize}
+  \item {\small Supporting and improving GPS fleet management systems with real-time tracking, geofencing, route optimization, and comprehensive telematics}
+  \item {\small Maintaining and enhancing MCP (Model Context Protocol) integrations to expose fleet data to AI agents, enabling natural language queries on vehicles, trips, and alerts}
+\end{itemize}
+\vspace{2pt}
+
+\subsection*{Software Developer}
+{\small \textbf{Bti Advisory} \textbar\ Casablanca, Morocco \textbar\ Feb 2023 -- Dec 2025}
+\vspace{2pt}
+\begin{itemize}
+  \item {\small Integrated the CertEurope API for a legal document validation system processing over 1,000 documents/month. Migrated 50~GB to Amazon S3, reducing retrieval time from 8s to 2s (75\% improvement)}
+  \item {\small Developed and deployed the backend for the Meetpe mobile application -- connecting travelers with local guides via a personalized matching algorithm and real-time notifications}
+  \item {\small Maintained the CNB banking payment module with Stripe integration and an e-learning platform}
+  \item {\small Built a Laravel solution for the Order of Chartered Accountants with CAS authentication and member account management}
+\end{itemize}
+\vspace{2pt}
+
+\subsection*{Software Developer}
+{\small \textbf{Easyapp24} \textbar\ Casablanca, Morocco \textbar\ Oct 2022 -- Jan 2023}
+\vspace{2pt}
+\begin{itemize}
+  \item {\small Built a dashboard to schedule and manage social media posts on Facebook, LinkedIn, YouTube, and Twitter using official SDKs}
+\end{itemize}
+\vspace{2pt}
+
+\subsection*{Software Developer}
+{\small \textbf{Wecare} \textbar\ Casablanca, Morocco \textbar\ Oct 2021 -- Nov 2022}
+\vspace{2pt}
+\begin{itemize}
+  \item {\small Maintained the WECARE platform (booking, payment, reviews) with a Laravel/Blade/AJAX backend}
+  \item {\small Supported the development of a hybrid mobile app with Ionic/Angular and set up CI/CD pipelines}
+\end{itemize}
+
+% ── PROJECTS ────────────────────────────────────────────────────────────────
+\section*{Projects}
+
+{\small \textbf{Meetpe -- Travel Mobile App Backend} \textbar\ \href{https://www.meetpe.fr/}{meetpe.fr}}
+\vspace{2pt}
+\begin{itemize}
+  \item {\small Laravel backend with a personalized matching algorithm, real-time push notifications, and full guide and traveler profile management}
+\end{itemize}
+
+\vspace{4pt}
+
+{\small \textbf{EdgeQuery -- AI-Powered Data Platform} \textbar\ \href{https://eadgequery.space}{eadgequery.space}}
+\vspace{2pt}
+\begin{itemize}
+  \item {\small AI-powered data platform that connects multiple databases. Users can ask questions in natural language, and the AI provides intelligent answers, analyzes the data, and presents clear, interactive visual insights.}
+  \item {\small Documentation: \href{https://eadgequery.space/docs}{eadgequery.space/docs}}
+\end{itemize}
+
+% ── EDUCATION ───────────────────────────────────────────────────────────────
+\section*{Education}
+{\small \textbf{Bachelor's Degree in Web Application Development}}\\
+{\small FST Settat \textbar\ Settat, Morocco \textbar\ In progress (Since 2025)}
+
+\vspace{4pt}
+
+{\small \textbf{Specialized Technician Diploma in Computer Development}}\\
+{\small ISTA Berrechid \textbar\ Berrechid, Morocco \textbar\ Sept 2019 -- Jul 2021}
+
+\vspace{4pt}
+
+{\small \textbf{Baccalaureate in Physical Sciences}}\\
+{\small Lycee Oulad HRIZ \textbar\ Berrechid, Morocco \textbar\ Jul 2019}
+
+% ── LANGUAGES ───────────────────────────────────────────────────────────────
+\section*{Languages}
+{\small \textbf{Arabic:} Native \quad\textbar\quad \textbf{French:} Fluent \quad\textbar\quad \textbf{English:} Professional}
+
+\end{document}

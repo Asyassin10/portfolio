@@ -72,9 +72,31 @@ const ExperienceComponent: React.FC = () => {
 
   const experiences: Experience[] = [
     {
-      period: "Feb 2023 - May 2025",
+      period: "Jan 2026 - Present",
+      role: "Full-Stack Software Engineer",
+      company: "Pillot",
+      color: "cyan",
+      projects: [
+        {
+          title: "🛰️ GPS Fleet Management System",
+          description:
+            "Supporting and improving GPS fleet management systems with real-time tracking, geofencing, route optimization, and comprehensive telematics.",
+          links: [],
+          images: [],
+        },
+        {
+          title: "🤖 MCP Fleet AI Integration",
+          description:
+            "Maintaining and enhancing MCP (Model Context Protocol) integrations to expose fleet data to AI agents, enabling natural language queries on vehicles, trips, and alerts.",
+          links: [],
+          images: [],
+        },
+      ],
+    },
+    {
+      period: "Feb 2023 - Dec 2025",
       role: "Software Developer",
-      company: "Neway E-SOFT",
+      company: "Bti Advisory",
       color: "indigo",
       projects: [
         {
@@ -293,7 +315,7 @@ const ExperienceComponent: React.FC = () => {
                             {project.images.map((img, imgIndex: number) => (
                               <div
                                 key={imgIndex}
-                                className="relative w-16 h-16 rounded-md overflow-hidden cursor-pointer border border-slate-600 hover:border-indigo-400 transition-colors"
+                                className="relative w-16 h-16 rounded-xl overflow-hidden cursor-pointer border border-slate-600 hover:border-indigo-400 transition-colors"
                                 onClick={() => openModal(project.images)}
                               >
                                 <Image
