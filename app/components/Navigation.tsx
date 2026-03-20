@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Home, User, Briefcase, Code, Cpu, ChevronUp, BookOpen, Server, Package } from "lucide-react"
+import { Menu, X, Home, User, Briefcase, Code, Cpu, ChevronUp, BookOpen, Server, Package, Globe } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
 import type { NavItem } from "@/types"
 
@@ -25,6 +25,7 @@ const Navigation: React.FC = () => {
     { id: "dockerhub", label: "Docker Hub", icon: <Server className="w-5 h-5" /> },
     { id: "packages", label: "My Packages", icon: <Package className="w-5 h-5" /> },
     { id: "medium", label: "Medium", icon: <BookOpen className="w-5 h-5" /> },
+    { id: "languages", label: "Languages", icon: <Globe className="w-5 h-5" /> },
   ]
 
   useEffect(() => {

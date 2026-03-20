@@ -7,13 +7,14 @@ import SpartaBanner from "./components/SpartaBanner"
 import DockerHubImages from "./components/DockerHubImages"
 import MediumArticles from "./components/MediumArticles"
 import ComposerPackages from "./components/ComposerPackages"
+import Languages from "./components/Languages"
 
 export default function Home() {
   return (
     <main className="bg-slate-950 min-h-screen">
       <ThreeScene />
       <div className="pt-24 container mx-auto px-6">
-         <SpartaBanner /> 
+         <SpartaBanner />
       </div>
       <Hero />
       <About />
@@ -22,6 +23,10 @@ export default function Home() {
       <DockerHubImages />
       <ComposerPackages />
       <MediumArticles />
+      <Languages />
+      <footer className="bg-slate-950 border-t border-slate-800 py-6 text-center text-slate-400 text-sm">
+        © 2026 Yassine Ait Sidi Brahim. All rights reserved.
+      </footer>
     </main>
   )
 }

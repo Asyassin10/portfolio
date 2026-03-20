@@ -252,7 +252,7 @@ const WebProjectCard = ({ project, index }: { project: WebProject; index: number
             className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-medium bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white transition-all duration-300 shadow-lg hover:shadow-emerald-500/30"
           >
             <ExternalLink className="w-4 h-4" />
-            Visiter le site
+            Visit Website
           </a>
         </div>
       </div>

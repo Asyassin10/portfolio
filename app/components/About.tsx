@@ -195,7 +195,7 @@ export default function About() {
                 <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
                   <Brain className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-display">Software Developer</h3>
+                <h3 className="text-2xl font-bold text-white font-display">Full-Stack Software Engineer & AI Engineer</h3>
               </div>
 
               <p className="text-left text-xl text-slate-300 leading-relaxed">

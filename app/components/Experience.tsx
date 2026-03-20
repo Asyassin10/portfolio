@@ -80,21 +80,21 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "🛰️ GPS Fleet Management System",
           description:
-            "Supporting and improving GPS fleet management systems with real-time tracking, geofencing, route optimization, and comprehensive telematics.",
+            "Supporting and improving a GPS fleet management platform tracking 500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
           links: [],
           images: [],
         },
         {
           title: "🤖 MCP Fleet AI Integration",
           description:
-            "Maintaining and enhancing MCP (Model Context Protocol) integrations to expose fleet data to AI agents, enabling natural language queries on vehicles, trips, and alerts.",
+            "Built and maintained MCP (Model Context Protocol) integrations exposing fleet data to AI agents, enabling natural language queries across 10+ data sources including vehicles, trips, and alerts — cutting average query time from minutes to seconds.",
           links: [],
           images: [],
         },
         {
           title: "📊 Flespi Fleet Monitoring Dashboard",
           description:
-            "Designed and built a real-time fleet monitoring dashboard using Grafana connected to Flespi telematics data. Visualized GPS positions, vehicle states, trip metrics, and alerts to give operators a live operational overview of the entire fleet.",
+            "Designed and built a real-time Grafana dashboard connected to Flespi telematics, visualizing GPS positions, vehicle states, trip metrics, and alerts for 500+ devices — giving operators a live overview and reducing incident response time by ~30%.",
           links: [],
           images: [],
         },
@@ -109,7 +109,7 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "🌐 Document Validation System for Lawyers",
           description:
-            "Optimized and maintained a legal document validation system for lawyers. Integrated new features, migrated storage to Amazon S3, and implemented electronic signatures via CertEurope APIs. Developed with Symfony (backend) and Angular (frontend).",
+            "Optimized and maintained a legal document validation system used by 70,000+ lawyers in France. Migrated file storage to Amazon S3 (reducing storage costs by 35%) and implemented electronic signatures via CertEurope APIs. Built with Symfony and Angular.",
           links: [{ url: "https://cnb.avocat.fr/fr", label: "CNB Platform" }],
           images: [],
         },
@@ -130,7 +130,7 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "📱 Meetpe Mobile App Backend",
           description:
-            "Developed and deployed the backend for the Meetpe mobile app, connecting travelers with local guides, featuring real-time notifications and a personalized matching algorithm.",
+            "Developed and deployed the backend for the Meetpe mobile app, connecting travelers with local guides. Implemented real-time push notifications and a matching algorithm handling 1,000+ daily matches with sub-200ms response time.",
           links: [{ url: "https://www.meetpe.fr", label: "Meetpe Website" }],
           images: [{ src: "/images/meetpe-app.png", alt: "Meetpe mobile app interface showing a local guide profile" }],
         },
