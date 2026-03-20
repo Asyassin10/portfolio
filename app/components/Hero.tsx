@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
             >
               <a
-                href="https://drive.google.com/file/d/1JWHRDeTPyVF8IqhBECXNdEQ0U7fnpmTk/view?usp=sharing"
+                href="https://drive.google.com/file/d/1D-mqkAuHRwFSiCNktcI3eOp8gJTiIwvO/view?usp=sharing" target="__blank"
                 className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <span>Resume</span>
