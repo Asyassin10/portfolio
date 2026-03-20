@@ -140,11 +140,10 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
             >
               <a
-                href="/yassine_ait_sidi_brahim_cv.pdf"
-                download="yassine_ait_sidi_brahim_cv.pdf"
+                href="https://drive.google.com/file/d/1JWHRDeTPyVF8IqhBECXNdEQ0U7fnpmTk/view?usp=sharing"
                 className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <span>Download Resume</span>
+                <span>Resume</span>
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
                   transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
