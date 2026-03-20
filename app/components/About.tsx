@@ -98,72 +98,79 @@ const SkillCategory = ({
 }
 
 export default function About() {
-const skillCategories = [
-  {
-    title: "Programming Languages",
-    skills: ["JavaScript", "TypeScript", "PHP", "Java", "Python"],
-    color: "blue",
-    icon: Code,
-  },
-  {
-    title: "Frontend Development",
-    skills: ["React.js", "Nextjs", "Bootstrap", "Tailwind CSS"],
-    color: "green",
-    icon: Palette,
-  },
-  {
-    title: "Backend Frameworks",
-    skills: ["Laravel", "Symfony", "Spring Boot","Spring Cloud"],
-    color: "purple",
-    icon: Server,
-  },
-  {
-    title: "Databases & Storage",
-    skills: ["MySQL", "PostgreSQL", "Redis", "Amazon S3"],
-    color: "red",
-    icon: Database,
-  },
-      {
-    title: "AI & LLMs",
-skills: [
-  "Large Language Models (LLMs)",
-  "LangChain",
-  "RAG (Retrieval-Augmented Generation)",
-  "Text Embeddings",
-  "Vector Databases",
-  "Cosine Similarity",
-  "Dot Product Search"
-],
-    color: "orange",
-    icon: Brain, 
-  },
-  {
-    title: "DevOps & Containerization",
-    skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions"],
-    color: "cyan",
-    icon: Container,
-  },
-  {
-    title: "Testing & Quality Assurance",
-    skills: ["Selenium", "Cypress", "SonarQube", "Sonarscan", "Coverage", "Unit testing"],
-    color: "pink",
-    icon: TestTube,
-  },
-
-  {
-    title: "Project Management",
-    skills: ["Jira", "Trello", "Kanban"],
-    color: "indigo",
-    icon: Kanban,
-  },
-  {
-    title: "Systems & Software Architecture",
-    skills: ["Linux","Microservices", "SDKs"],
-    color: "teal",
-    icon: Monitor,
-  }
-
-];
+  const skillCategories = [
+    {
+      title: "Backend Frameworks",
+      skills: ["Laravel", "Symfony", "Spring Boot", "Spring Cloud", "REST API Design"],
+      color: "purple",
+      icon: Server,
+    },
+    {
+      title: "Programming Languages",
+      skills: ["JavaScript", "TypeScript", "PHP", "Java", "Python"],
+      color: "blue",
+      icon: Code,
+    },
+    {
+      title: "AI & LLMs",
+      skills: [
+        "Large Language Models (LLMs)",
+        "LangChain",
+        "MCP (Model Context Protocol)",
+        "RAG (Retrieval-Augmented Generation)",
+        "AI Agents & Tool Architectures",
+        "Text Embeddings",
+        "Vector Databases (Qdrant)",
+        "Cosine Similarity",
+        "Dot Product Search",
+        "Prompt Engineering",
+      ],
+      color: "orange",
+      icon: Brain,
+    },
+    {
+      title: "Cloud & DevOps",
+      skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions", "Linux"],
+      color: "cyan",
+      icon: Container,
+    },
+    {
+      title: "Frontend Development",
+      skills: ["React.js", "Next.js", "React Native", "Bootstrap", "Tailwind CSS"],
+      color: "green",
+      icon: Palette,
+    },
+    {
+      title: "Databases & Storage",
+      skills: ["MySQL", "PostgreSQL", "PostGIS", "Redis", "Amazon S3"],
+      color: "red",
+      icon: Database,
+    },
+    {
+      title: "Testing & Quality Assurance",
+      skills: ["Selenium", "Cypress", "SonarQube", "Coverage", "Unit testing"],
+      color: "pink",
+      icon: TestTube,
+    },
+    {
+      title: "Project Management",
+      skills: ["Jira", "Trello", "Kanban", "Slack"],
+      color: "indigo",
+      icon: Kanban,
+    },
+    {
+      title: "Monitoring & BI",
+      skills: ["Grafana", "Metabase"],
+      color: "teal",
+      icon: Monitor,
+    },
+    {
+      title: "Systems & Software Architecture",
+      skills: ["Linux", "Microservices"],
+      color: "teal",
+      icon: Building,
+    },
+  ];
 
 
   return (
@@ -191,8 +198,14 @@ skills: [
                 <h3 className="text-2xl font-bold text-white font-display">Software Developer</h3>
               </div>
 
-              <p className="text-xl text-slate-300 leading-relaxed">
-                With 4 years of hands-on experience, curiosity has been my guide from day one. I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows. I’m always eager to learn, improve, and deliver better results
+              <p className="text-left text-xl text-slate-300 leading-relaxed">
+                With 4 years of hands-on experience, curiosity has been my guide from day one.<br />
+                I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows.<br />
+                My core expertise spans backend development with Laravel and Symfony,<br />
+                frontend with React and Next.js, and mobile with React Native.<br />
+                Recently, I've been drawn to integrating AI into real projects, building RAG systems, MCP server architectures, and LLM-powered features.<br />
+                What excites me most now is exploring MLOps, model training, and cloud AI services with AWS—a path I'm actively learning and passionate about.<br />
+                I'm always eager to grow, improve, and deliver better results.
               </p>
             </div>
           </motion.div>

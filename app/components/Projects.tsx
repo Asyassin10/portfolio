@@ -1,7 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { Github, Star, GitFork, Eye, ExternalLink, Trophy, Sparkles } from "lucide-react"
+import { Github, Star, GitFork, Eye, ExternalLink, Trophy, Sparkles, Play } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 // Repository type
@@ -26,6 +27,7 @@ interface WebProject {
   backgroundImage: string
   tags: string[]
   isFeatured?: boolean
+  youtubeUrl?: string
 }
 
 // Repository card component
@@ -135,6 +137,86 @@ const RepoCard = ({ repo, index }: { repo: Repository; index: number }) => {
 
 // Web Project card component
 const WebProjectCard = ({ project, index }: { project: WebProject; index: number }) => {
+  const [videoPlaying, setVideoPlaying] = useState(false)
+
+  if (project.isFeatured) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="col-span-full"
+      >
+        <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl border border-yellow-500/40 hover:border-yellow-500/60 shadow-lg shadow-yellow-500/10 overflow-hidden transition-all duration-300 group relative">
+          <div className="absolute -top-2 -left-2 text-yellow-400/60 z-10"><Sparkles className="w-4 h-4" /></div>
+          <div className="absolute -bottom-2 -right-2 text-yellow-400/60 z-10"><Sparkles className="w-4 h-4" /></div>
+
+          <div className="flex flex-col lg:flex-row">
+            {/* Left: video with image as poster */}
+            <div className="lg:w-1/2 relative" style={{ minHeight: "320px" }}>
+              {!videoPlaying ? (
+                <div
+                  className="absolute inset-0 cursor-pointer"
+                  onClick={() => setVideoPlaying(true)}
+                >
+                  <img
+                    src={project.backgroundImage}
+                    alt={project.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-yellow-500/90 flex items-center justify-center hover:bg-yellow-400 transition-colors shadow-lg shadow-yellow-500/50">
+                      <Play className="w-7 h-7 text-white ml-1" fill="white" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  src="https://www.youtube.com/embed/iSPLAIAIoPI?autoplay=1"
+                  title="EadgeQuery Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              )}
+            </div>
+
+            {/* Right: content */}
+            <div className="lg:w-1/2 p-8 flex flex-col justify-between">
+              <div>
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white font-display">{project.name}</h3>
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-amber-600/20 text-yellow-300 text-xs font-semibold rounded-full border border-yellow-500/30">
+                    <Star className="w-3 h-3" />
+                    Featured
+                  </span>
+                </div>
+                <p className="text-slate-300 mb-6 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="px-2 py-1 text-xs rounded-full border bg-yellow-500/10 text-yellow-300 border-yellow-500/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-medium bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white transition-all duration-300 shadow-lg hover:shadow-yellow-500/30"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Explore Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    )
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -144,31 +226,7 @@ const WebProjectCard = ({ project, index }: { project: WebProject; index: number
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="h-full"
     >
-      <div className={`bg-slate-900/80 backdrop-blur-md rounded-2xl border h-full flex flex-col overflow-hidden hover:border-indigo-500/40 transition-all duration-300 group relative
-        ${project.isFeatured 
-          ? 'border-yellow-500/40 hover:border-yellow-500/60 shadow-lg shadow-yellow-500/10' 
-          : 'border-indigo-500/20'}`}
-      >
-        {/* Featured badge */}
-        {project.isFeatured && (
-          <div className="absolute -top-3 -right-3 z-10">
-
-          </div>
-        )}
-
-        {/* Sparkle effect for featured project */}
-        {project.isFeatured && (
-          <>
-            <div className="absolute -top-2 -left-2 text-yellow-400/60">
-              <Sparkles className="w-4 h-4" />
-            </div>
-            <div className="absolute -bottom-2 -right-2 text-yellow-400/60">
-              <Sparkles className="w-4 h-4" />
-            </div>
-          </>
-        )}
-
-        {/* Project Image */}
+      <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl border border-indigo-500/20 h-full flex flex-col overflow-hidden hover:border-indigo-500/40 transition-all duration-300 group">
         <div className="relative h-48 overflow-hidden rounded-t-2xl">
           <img
             src={project.backgroundImage}
@@ -176,53 +234,25 @@ const WebProjectCard = ({ project, index }: { project: WebProject; index: number
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-t-2xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
-          
-          {/* Gradient overlay for featured project */}
-          {project.isFeatured && (
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent"></div>
-          )}
         </div>
-        
         <div className="p-6 flex-1 flex flex-col">
-          <div className="flex items-start justify-between mb-2">
-            <h3 className="text-xl font-bold text-white font-display">{project.name}</h3>
-            {project.isFeatured && (
-              <span className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-amber-600/20 text-yellow-300 text-xs font-semibold rounded-full border border-yellow-500/30">
-                <Star className="w-3 h-3" />
-                Featured
-              </span>
-            )}
-          </div>
-          
+          <h3 className="text-xl font-bold text-white font-display mb-2">{project.name}</h3>
           <p className="text-slate-300 mb-4 flex-1">{project.description}</p>
-
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tags.map((tag, i) => (
-              <span
-                key={i}
-                className={`px-2 py-1 text-xs rounded-full border ${
-                  project.isFeatured 
-                    ? 'bg-yellow-500/10 text-yellow-300 border-yellow-500/30' 
-                    : 'bg-slate-800 text-slate-300 border-slate-700'
-                }`}
-              >
+              <span key={i} className="px-2 py-1 text-xs rounded-full border bg-slate-800 text-slate-300 border-slate-700">
                 {tag}
               </span>
             ))}
           </div>
-
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-lg
-              ${project.isFeatured 
-                ? 'bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white hover:shadow-yellow-500/30' 
-                : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white hover:shadow-emerald-500/30'}`}
+            className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-medium bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white transition-all duration-300 shadow-lg hover:shadow-emerald-500/30"
           >
             <ExternalLink className="w-4 h-4" />
-            {project.isFeatured ? 'Explore Project' : 'Visiter le site'}
+            Visiter le site
           </a>
         </div>
       </div>
@@ -235,59 +265,59 @@ export default function Projects() {
   const repositories: Repository[] = [
 
     {
-  id: 1,
-  name: "voice-ai-assistant",
-  language: "Python",
-  url: "https://github.com/Asyassin10/voice-ai-assistant",
-  tags: ["Whisper STT", "LLM", "Kokoro TTS", "Qdrant", "RAG"],
-  description: "Multilingual voice assistant (French & Arabic) using Whisper STT, local LLM, Kokoro TTS, and Qdrant for context-aware responses.",
-},
+      id: 1,
+      name: "voice-ai-assistant",
+      language: "Python",
+      url: "https://github.com/Asyassin10/voice-ai-assistant",
+      tags: ["Whisper STT", "LLM", "Kokoro TTS", "Qdrant", "RAG"],
+      description: "Multilingual voice assistant (French & Arabic) using Whisper STT, local LLM, Kokoro TTS, and Qdrant for context-aware responses.",
+    },
   ]
 
   // Web projects data - Eadgequery marked as featured
-const webProjects: WebProject[] = [
-  {
-    id: 8,
-    name: "EadgeQuery",
-    description :"I developed EadgeQuery, an AI-powered data platform that connects to multiple databases. Users can ask questions in natural language, and the AI generates intelligent queries, analyzes the data, and delivers responses along with visual insights through a user-friendly interface.",
-    url: "https://eadgequery.space/",
-    backgroundImage: "https://eadgequery.space/logo.png",
-    tags: ["AI", "SQL", "Natural Language", "Data Analysis", "Microservices", "Spring Boot","LLM", "RAG"],
-    isFeatured: true
-  },
-  {
-    id: 4,
-    name: "Meetpe",
-    description: "Developed and deployed the backend for the Meetpe mobile application, connecting travelers with local guides, featuring real-time notifications and a personalized matching algorithm.",
-    url: "https://www.meetpe.fr/",
-    backgroundImage: "https://www.meetpe.fr/assets/LogoMeetpe-Da2Xwly9.png",
-    tags: ["Backend", "Mobile", "Real-time", "Matching Algorithm"]
-  },
-  {
-    id: 5,
-    name: "Wecare",
-    description: "Developed the WECARE platform, an online beauty appointment solution in Morocco. Designed the backend using Laravel, utilized Blade for views, and implemented AJAX for dynamic API calls.",
-    url: "https://wecare.ma",
-    backgroundImage: "https://media.licdn.com/dms/image/v2/D4E2DAQFSismHMBc8VQ/profile-treasury-image-shrink_800_800/B4EZc3LJ4VGcAc-/0/1748977361161?e=1750161600&v=beta&t=-qMUVOmtnaCCfwWkqHBeRJEqIt5uKoO7lg1AsnYYaaE",
-    tags: ["Laravel", "E-commerce", "Booking System", "AJAX"]
-  },
-  {
-    id: 89,
-    name: "BTI Advisory",
-    description: "Developed a static website for BTI Advisory Company, implementing responsive design, interactive elements, and performance optimization to enhance user experience and support business operations.",
-    url: "https://www.bti-advisory.com/",
-    backgroundImage: "https://www.bti-advisory.com/wp-content/uploads/2024/07/etude-de-cas-jpg.webp",
-    tags: []
-  },
-  {
-    id: 6,
-    name: "Comptexpert",
-    description: "Developed a Laravel solution for the Order of Chartered Accountants, integrating an optimized e-commerce platform and secure authentication via CAS.",
-    url: "https://www.experts-comptables.fr",
-    backgroundImage: "https://www.experts-comptables.fr/sites/default/files/styles/csoec_12/public/assets/images/Ecran%20comptexpert%202023.jpg?itok=3Eh0Uvw8",
-    tags: ["Laravel", "E-commerce", "CAS Authentication", "Enterprise"]
-  }
-];
+  const webProjects: WebProject[] = [
+    {
+      id: 8,
+      name: "EadgeQuery",
+      description: "I developed EadgeQuery, an AI-powered data platform that connects to multiple databases. Users can ask questions in natural language, and the AI generates intelligent queries, analyzes the data, and delivers responses along with visual insights through a user-friendly interface.",
+      url: "https://eadgequery.space/",
+      backgroundImage: "/image.png",
+      tags: ["AI", "SQL", "Natural Language", "Data Analysis", "Microservices", "Spring Boot", "LLM", "RAG"],
+      isFeatured: true
+    },
+    {
+      id: 4,
+      name: "Meetpe",
+      description: "Developed and deployed the backend for the Meetpe mobile application, connecting travelers with local guides, featuring real-time notifications and a personalized matching algorithm.",
+      url: "https://www.meetpe.fr/",
+      backgroundImage: "https://www.meetpe.fr/assets/LogoMeetpe-Da2Xwly9.png",
+      tags: ["Backend", "Mobile", "Real-time", "Matching Algorithm"]
+    },
+    {
+      id: 5,
+      name: "Wecare",
+      description: "Developed the WECARE platform, an online beauty appointment solution in Morocco. Designed the backend using Laravel, utilized Blade for views, and implemented AJAX for dynamic API calls.",
+      url: "https://wecare.ma",
+      backgroundImage: "/images/wecare-1.png",
+      tags: ["Laravel", "E-commerce", "Booking System", "AJAX"]
+    },
+    {
+      id: 89,
+      name: "BTI Advisory",
+      description: "Developed a static website for BTI Advisory Company, implementing responsive design, interactive elements, and performance optimization to enhance user experience and support business operations.",
+      url: "https://www.bti-advisory.com/",
+      backgroundImage: "https://www.bti-advisory.com/wp-content/uploads/2024/07/etude-de-cas-jpg.webp",
+      tags: []
+    },
+    {
+      id: 6,
+      name: "Comptexpert",
+      description: "Developed a Laravel solution for the Order of Chartered Accountants, integrating an optimized e-commerce platform and secure authentication via CAS.",
+      url: "https://www.experts-comptables.fr",
+      backgroundImage: "https://www.experts-comptables.fr/sites/default/files/styles/csoec_12/public/assets/images/Ecran%20comptexpert%202023.jpg?itok=3Eh0Uvw8",
+      tags: ["Laravel", "E-commerce", "CAS Authentication", "Enterprise"]
+    }
+  ];
 
 
   return (

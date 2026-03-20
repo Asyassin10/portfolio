@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.4 }}
             >
               <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-indigo-300 border border-indigo-500/20">
-                Web Developer
+                Full-Stack Software Engineer & AI Engineer
               </span>
             </motion.div>
 
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.8 }}
             >
               <a
-                href="https://www.linkedin.com/in/yassine-aitsidi-brahim/"
+                href="https://www.linkedin.com/in/yassine-brahim-0a91b23b5/"
                 className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
                 aria-label="LinkedIn Profile" target="__blank"
               >

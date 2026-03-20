@@ -91,6 +91,13 @@ const ExperienceComponent: React.FC = () => {
           links: [],
           images: [],
         },
+        {
+          title: "📊 Flespi Fleet Monitoring Dashboard",
+          description:
+            "Designed and built a real-time fleet monitoring dashboard using Grafana connected to Flespi telematics data. Visualized GPS positions, vehicle states, trip metrics, and alerts to give operators a live operational overview of the entire fleet.",
+          links: [],
+          images: [],
+        },
       ],
     },
     {

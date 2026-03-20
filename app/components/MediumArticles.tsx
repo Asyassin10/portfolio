@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, BookOpen, Award } from "lucide-react"
+import { ExternalLink, BookOpen, Award, Pin } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 // Medium article type
@@ -12,6 +12,7 @@ interface MediumArticle {
   link: string
   image: string
   featured?: boolean
+  pinned?: boolean
   publication?: string
 }
 
@@ -87,6 +88,12 @@ const ArticleCard = ({ article, index }: { article: MediumArticle; index: number
           style={{ backgroundImage: `url(${article.image})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-70" />
+        {article.pinned && (
+          <div className="absolute top-3 left-3 flex items-center gap-1 px-2 py-1 bg-yellow-500/90 backdrop-blur-sm rounded-full text-xs text-white font-semibold border border-yellow-400/50">
+            <Pin className="w-3 h-3" />
+            Pinned
+          </div>
+        )}
       </div>
 
       <div className="p-6 flex-1 flex flex-col">
@@ -121,13 +128,40 @@ export default function MediumArticles() {
   // Your actual Medium articles data (reduced to 4 total: 1 featured + 3 regular)
   const articles: MediumArticle[] = [
     {
+      id: 5,
+      title: "Two Types of Developers in the AI Era: Which One Are You?",
+      excerpt:
+        "The AI era is reshaping what it means to be a developer. Discover the two emerging profiles and figure out which path you're on.",
+      link: "https://yassineaitsidibrahim.medium.com/two-types-of-developers-in-the-ai-era-which-one-are-you-feb6869f167f",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Su2TkPd2I0f7uhiHKIohkg.jpeg",
+      featured: true,
+      publication: "Yassine Ait Sidi Brahim",
+    },
+    {
+      id: 6,
+      title: "How Shazam Works: Audio Fingerprinting",
+      excerpt:
+        "A deep dive into the algorithm behind Shazam — how audio fingerprinting turns a few seconds of sound into an exact song match from millions of tracks.",
+      link: "https://yassineaitsidibrahim.medium.com/how-shazam-works-audio-fingerprinting-636c031aa6fa",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*HJq-kEHP33orhpT7.png",
+      publication: "Yassine Ait Sidi Brahim",
+    },
+    {
+      id: 7,
+      title: "The Modern Way to Communicate Between Microservices",
+      excerpt:
+        "Explore modern patterns for microservice communication — from REST and gRPC to event-driven messaging — and how to choose the right approach for your architecture.",
+      link: "https://yassineaitsidibrahim.medium.com/the-modern-way-to-communicate-between-microservices-577372272cdd",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*f01VfADWY_AbBMbt.png",
+      publication: "Yassine Ait Sidi Brahim",
+    },
+    {
       id: 1,
       title: "Building a Moroccan ID OCR Scanner with Python, Flask, and EasyOCR",
       excerpt:
         "A comprehensive guide to building an OCR system specifically designed for Moroccan national ID cards using Python, Flask, and EasyOCR for accurate text extraction and data processing.",
       link: "https://yassineaitsidibrahim.medium.com/building-a-moroccan-id-ocr-scanner-with-python-flask-and-easyocr-ae5b0f575b73",
       image: "/images/moroccan-id-ocr.png",
-      featured: true,
       publication: "Yassine Ait Sidi Brahim",
     },
     {
