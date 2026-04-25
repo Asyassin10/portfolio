@@ -49,51 +49,37 @@ export default function CodeEditorAnimation() {
       property: "#06b6d4",
     }
 
-    // PHP OOP Code lines
+    // Go code lines
     const codeLines = [
-      { text: "<?php", color: colors.keyword },
+      { text: "package warband", color: colors.keyword },
       { text: "", color: colors.text },
-      { text: "// Portfolio Management System", color: colors.comment },
-      { text: "namespace App\\Models;", color: colors.keyword },
+      { text: 'import "fmt"', color: colors.keyword },
       { text: "", color: colors.text },
-      { text: "class Portfolio", color: colors.class },
-      { text: "{", color: colors.text },
-      { text: "    private string $name;", color: colors.property },
-      { text: "    private array $projects = [];", color: colors.property },
-      { text: "    private array $skills = [];", color: colors.property },
-      { text: "", color: colors.text },
-      { text: "    public function __construct(string $name)", color: colors.function },
-      { text: "    {", color: colors.text },
-      { text: "        $this->name = $name;", color: colors.variable },
-      { text: "    }", color: colors.text },
-      { text: "", color: colors.text },
-      { text: "    public function addProject(Project $project): void", color: colors.function },
-      { text: "    {", color: colors.text },
-      { text: "        $this->projects[] = $project;", color: colors.variable },
-      { text: "    }", color: colors.text },
-      { text: "", color: colors.text },
-      { text: "    public function getProjects(): array", color: colors.function },
-      { text: "    {", color: colors.text },
-      { text: "        return $this->projects;", color: colors.variable },
-      { text: "    }", color: colors.text },
-      { text: "", color: colors.text },
-      { text: "    public function addSkill(string $skill): self", color: colors.function },
-      { text: "    {", color: colors.text },
-      { text: "        if (!in_array($skill, $this->skills)) {", color: colors.keyword },
-      { text: "            $this->skills[] = $skill;", color: colors.variable },
-      { text: "        }", color: colors.text },
-      { text: "        return $this;", color: colors.keyword },
-      { text: "    }", color: colors.text },
-      { text: "", color: colors.text },
-      { text: "    public function displayInfo(): string", color: colors.function },
-      { text: "    {", color: colors.text },
-      { text: '        return "Portfolio: {$this->name}";', color: colors.string },
-      { text: "    }", color: colors.text },
+      { text: "type Warband struct {", color: colors.class },
+      { text: "    Name      string", color: colors.property },
+      { text: "    Services  []string", color: colors.property },
+      { text: "    Commanders []string", color: colors.property },
       { text: "}", color: colors.text },
       { text: "", color: colors.text },
-      { text: "// Usage", color: colors.comment },
-      { text: "$portfolio = new Portfolio('Yassine');", color: colors.variable },
-      { text: "$portfolio->addSkill('PHP')->addSkill('Laravel');", color: colors.variable },
+      { text: "func NewWarband(name string) *Warband {", color: colors.function },
+      { text: '        return &Warband{Name: name, Services: []string{}, Commanders: []string{"Odin"}}', color: colors.variable },
+      { text: "}", color: colors.text },
+      { text: "", color: colors.text },
+      { text: "func (w *Warband) AddService(service string) {", color: colors.function },
+      { text: "    w.Services = append(w.Services, service)", color: colors.variable },
+      { text: "}", color: colors.text },
+      { text: "", color: colors.text },
+      { text: "func (w *Warband) Rally() string {", color: colors.function },
+      { text: '    return fmt.Sprintf("%s marches with %d services into battle", w.Name, len(w.Services))', color: colors.string },
+      { text: "}", color: colors.text },
+      { text: "", color: colors.text },
+      { text: "func main() {", color: colors.function },
+      { text: '    warband := NewWarband("Yassine")', color: colors.variable },
+      { text: '    warband.AddService("gateway")', color: colors.variable },
+      { text: '    warband.AddService("odin-core")', color: colors.variable },
+      { text: '    warband.AddService("battle-api")', color: colors.variable },
+      { text: "    fmt.Println(warband.Rally())", color: colors.variable },
+      { text: "}", color: colors.text },
     ]
 
     // Animation variables
@@ -101,6 +87,8 @@ export default function CodeEditorAnimation() {
     let currentChar = 0
     let cursorVisible = true
     let lastTime = 0
+    let typingAccumulator = 0
+    let resetDelay = 0
     let cursorBlinkTime = 0
 
     // Draw code editor
@@ -115,7 +103,7 @@ export default function CodeEditorAnimation() {
       const scaleFactor = width / 500 // Base scale on a 500px reference width
       const lineHeight = 16 * scaleFactor
       const startX = 40 * scaleFactor
-      const startY = 30 * scaleFactor
+      const startY = 28 * scaleFactor
       const tabSize = 20 * scaleFactor
       const fontSize = 12 * scaleFactor
 
@@ -190,19 +178,30 @@ export default function CodeEditorAnimation() {
         cursorBlinkTime = 0
       }
 
-      // Handle typing (every 50ms)
-      if (deltaTime > 10) {
-        if (currentLine < codeLines.length) {
+      typingAccumulator += deltaTime
+
+      // Handle typing at a readable speed and hold the final frame briefly.
+      if (currentLine < codeLines.length) {
+        const typingStep = 32
+
+        while (typingAccumulator >= typingStep && currentLine < codeLines.length) {
+          typingAccumulator -= typingStep
+
           if (currentChar < codeLines[currentLine].text.length) {
             currentChar++
           } else {
             currentLine++
             currentChar = 0
           }
-        } else {
-          // Reset animation
+        }
+      } else {
+        resetDelay += deltaTime
+
+        if (resetDelay >= 1400) {
           currentLine = 0
           currentChar = 0
+          typingAccumulator = 0
+          resetDelay = 0
         }
       }
 
@@ -221,18 +220,18 @@ export default function CodeEditorAnimation() {
   }, [])
 
   return (
-    <div className="relative w-full max-w-[500px] mx-auto">
+    <div className="relative w-full max-w-[500px] mx-auto pt-8">
       <div className="absolute top-0 left-0 right-0 h-8 bg-slate-800 rounded-t-lg flex items-center px-4">
         <div className="flex space-x-2">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <div className="text-xs text-slate-400 mx-auto">Portfolio.php</div>
+        <div className="text-xs text-slate-400 mx-auto">warband.go</div>
       </div>
       <canvas
         ref={canvasRef}
-        className="rounded-lg shadow-2xl border border-slate-700 w-full"
+        className="rounded-lg shadow-2xl border border-slate-700 w-full block"
         style={{ borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
       />
     </div>

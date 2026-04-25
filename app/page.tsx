@@ -2,6 +2,7 @@ import Hero from "./components/Hero"
 import About from "./components/About"
 import Experience from "./components/Experience"
 import Projects from "./components/Projects"
+import MyFramework from "./components/MyFramework"
 import ThreeScene from "./components/ThreeScene"
 import SpartaBanner from "./components/SpartaBanner"
 import DockerHubImages from "./components/DockerHubImages"
@@ -20,6 +21,7 @@ export default function Home() {
       <About />
       <Experience />
       <Projects />
+      <MyFramework />
       <DockerHubImages />
       <ComposerPackages />
       <MediumArticles />

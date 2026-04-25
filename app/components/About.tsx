@@ -184,29 +184,43 @@ export default function About() {
 
         <div className="flex flex-col items-center gap-12">
           <motion.div
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-5xl mx-auto w-full"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             <div className="bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-indigo-500/20">
-              <div className="flex items-center justify-center mb-6">
-                <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
-                  <Brain className="w-6 h-6 text-indigo-400" />
+              <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 xl:gap-10 items-center">
+                <div className="flex justify-center lg:justify-start">
+                  <div className="relative w-full max-w-[360px] h-[420px] sm:h-[500px] rounded-[2rem] overflow-hidden border border-indigo-500/30 shadow-2xl shadow-indigo-950/30 bg-slate-950">
+                    <img
+                      src="/yassine-ait-sidibrahim.png"
+                      alt="Yassine Ait Sidi Brahim portrait"
+                      className="w-full h-full object-cover object-center object-[center_8%]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent" />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white font-display">Full-Stack Software Engineer & AI Engineer</h3>
-              </div>
+                <div className="w-full">
+                  <div className="flex items-center justify-center lg:justify-start mb-6">
+                    <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
+                      <Brain className="w-6 h-6 text-indigo-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white font-display">Full-Stack Software Engineer & AI Engineer</h3>
+                  </div>
 
-              <p className="text-left text-xl text-slate-300 leading-relaxed">
-                With 4 years of hands-on experience, curiosity has been my guide from day one.<br />
-                I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows.<br />
-                My core expertise spans backend development with Laravel and Symfony,<br />
-                frontend with React and Next.js, and mobile with React Native.<br />
-                Recently, I've been drawn to integrating AI into real projects, building RAG systems, MCP server architectures, and LLM-powered features.<br />
-                What excites me most now is exploring MLOps, model training, and cloud AI services with AWS—a path I'm actively learning and passionate about.<br />
-                I'm always eager to grow, improve, and deliver better results.
-              </p>
+                  <p className="text-left text-xl text-slate-300 leading-relaxed">
+                    With 4 years of hands-on experience, curiosity has been my guide from day one.<br />
+                    I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows.<br />
+                    My core expertise spans backend development with Laravel and Symfony,<br />
+                    frontend with React and Next.js, and mobile with React Native.<br />
+                    Recently, I've been drawn to integrating AI into real projects, building RAG systems, MCP server architectures, and LLM-powered features.<br />
+                    What excites me most now is exploring MLOps, model training, and cloud AI services with AWS—a path I'm actively learning and passionate about.<br />
+                    I'm always eager to grow, improve, and deliver better results.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 

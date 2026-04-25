@@ -281,7 +281,7 @@ export default function Projects() {
       name: "EadgeQuery",
       description: "I developed EadgeQuery, an AI-powered data platform that connects to multiple databases. Users can ask questions in natural language, and the AI generates intelligent queries, analyzes the data, and delivers responses along with visual insights through a user-friendly interface.",
       url: "https://eadgequery.space/",
-      backgroundImage: "/image.png",
+      backgroundImage: "/eadge.png",
       tags: ["AI", "SQL", "Natural Language", "Data Analysis", "Microservices", "Spring Boot", "LLM", "RAG"],
       isFeatured: true
     },
