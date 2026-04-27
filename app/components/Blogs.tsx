@@ -200,9 +200,8 @@ export default function Blogs() {
             <div className="flex flex-wrap gap-2 w-full md:w-1/2 justify-center md:justify-end">
               <button
                 onClick={() => setActiveTag(null)}
-                className={`px-3 py-1 rounded-full text-sm transition-colors duration-300 ${
-                  activeTag === null ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                }`}
+                className={`px-3 py-1 rounded-full text-sm transition-colors duration-300 ${activeTag === null ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                  }`}
               >
                 All
               </button>
@@ -210,9 +209,8 @@ export default function Blogs() {
                 <button
                   key={index}
                   onClick={() => setActiveTag(tag)}
-                  className={`px-3 py-1 rounded-full text-sm transition-colors duration-300 flex items-center gap-1 ${
-                    activeTag === tag ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                  }`}
+                  className={`px-3 py-1 rounded-full text-sm transition-colors duration-300 flex items-center gap-1 ${activeTag === tag ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                    }`}
                 >
                   <Tag className="w-3 h-3" />
                   {tag}

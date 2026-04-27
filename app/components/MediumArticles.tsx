@@ -125,20 +125,40 @@ const ArticleCard = ({ article, index }: { article: MediumArticle; index: number
 }
 
 export default function MediumArticles() {
-  // Your actual Medium articles data (reduced to 4 total: 1 featured + 3 regular)
   const articles: MediumArticle[] = [
+    // ── FEATURED (pinned first) ──────────────────────────────────────────
     {
-      id: 5,
-      title: "Two Types of Developers in the AI Era: Which One Are You?",
+      id: 1,
+      title: "PHP Has No Good Microservice Framework. So I Built Valhalla.",
       excerpt:
-        "The AI era is reshaping what it means to be a developer. Discover the two emerging profiles and figure out which path you're on.",
-      link: "https://yassineaitsidibrahim.medium.com/two-types-of-developers-in-the-ai-era-which-one-are-you-feb6869f167f",
-      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Su2TkPd2I0f7uhiHKIohkg.jpeg",
+        "Laravel is too heavy, Slim is too bare, and Lumen is deprecated. I got frustrated and built Valhalla — a microservices-first PHP framework with CLI scaffolding, JWT auth, a service client, and local agent workers. ~300KB, two runtime dependencies.",
+      link: "https://yassineaitsidibrahim.medium.com/valhalla-i-built-a-microservices-php-framework-from-scratch-heres-why-d09d09e650af",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*ujk-sHD0Ij7_OpE8.png",
       featured: true,
       publication: "Yassine Ait Sidi Brahim",
     },
+
+    // ── REGULAR CARDS ────────────────────────────────────────────────────
     {
-      id: 6,
+      id: 2,
+      title: "Building a PHP Extension in C (And Locking It Behind a License)",
+      excerpt:
+        "When PHP isn't fast enough, you go lower. This article covers writing a real PHP extension in C from scratch — handling parameters, zvals, and memory — then adding runtime license validation so your compiled .so only runs on authorized servers.",
+      link: "https://yassineaitsidibrahim.medium.com/building-a-php-extension-in-c-and-locking-it-behind-a-license-46f2eb811ed5",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*qb3opjuMqlqyARqfngpi3g.png",
+      publication: "Yassine Ait Sidi Brahim",
+    },
+    {
+      id: 3,
+      title: "Why Cosine Similarity Is the Engine Behind Every RAG System",
+      excerpt:
+        "Cosine similarity doesn't measure distance — it measures direction. This piece breaks down how the formula works, why embeddings encode meaning in vector direction rather than magnitude, and why tools like Qdrant and Pinecone rely on it for semantic search.",
+      link: "https://yassineaitsidibrahim.medium.com/understanding-cosine-similarity-how-it-works-698f48b08ed1",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*EDwv-v1W8oEpx_-W",
+      publication: "Yassine Ait Sidi Brahim",
+    },
+    {
+      id: 4,
       title: "How Shazam Works: Audio Fingerprinting",
       excerpt:
         "A deep dive into the algorithm behind Shazam — how audio fingerprinting turns a few seconds of sound into an exact song match from millions of tracks.",
@@ -147,7 +167,7 @@ export default function MediumArticles() {
       publication: "Yassine Ait Sidi Brahim",
     },
     {
-      id: 7,
+      id: 5,
       title: "The Modern Way to Communicate Between Microservices",
       excerpt:
         "Explore modern patterns for microservice communication — from REST and gRPC to event-driven messaging — and how to choose the right approach for your architecture.",
@@ -156,16 +176,7 @@ export default function MediumArticles() {
       publication: "Yassine Ait Sidi Brahim",
     },
     {
-      id: 1,
-      title: "Building a Moroccan ID OCR Scanner with Python, Flask, and EasyOCR",
-      excerpt:
-        "A comprehensive guide to building an OCR system specifically designed for Moroccan national ID cards using Python, Flask, and EasyOCR for accurate text extraction and data processing.",
-      link: "https://yassineaitsidibrahim.medium.com/building-a-moroccan-id-ocr-scanner-with-python-flask-and-easyocr-ae5b0f575b73",
-      image: "/images/moroccan-id-ocr.png",
-      publication: "Yassine Ait Sidi Brahim",
-    },
-    {
-      id: 2,
+      id: 6,
       title: "Why It's Time to Ditch Docker for Podman",
       excerpt:
         "Exploring the advantages of Podman over Docker, including rootless containers, better security, and seamless integration with systemd for modern containerization needs.",
@@ -173,29 +184,21 @@ export default function MediumArticles() {
       image: "/images/docker-vs-podman.png",
       publication: "Yassine Ait Sidi Brahim",
     },
+
+    // ── BOTTOM (last) ────────────────────────────────────────────────────
     {
-      id: 3,
-      title: "Scramble: The Best Laravel Package to Generate API Documentation in One Command",
+      id: 7,
+      title: "Two Types of Developers in the AI Era: Which One Are You?",
       excerpt:
-        "Discover how Scramble revolutionizes API documentation in Laravel by automatically generating comprehensive docs from your code with zero configuration required.",
-      link: "https://yassineaitsidibrahim.medium.com/scramble-the-best-laravel-native-package-to-generate-api-documentation-in-laravel-in-one-command-9a6daf52c83c",
-      image: "/images/scramble-api-docs.png",
-      publication: "Yassine Ait Sidi Brahim",
-    },
-    {
-      id: 4,
-      title: "Laravel Pulse vs Telescope: Best Monitoring Tool for Production",
-      excerpt:
-        "A detailed comparison between Laravel Pulse and Telescope for production monitoring, covering performance, features, and real-world use cases to help you choose the right tool.",
-      link: "https://yassineaitsidibrahim.medium.com/why-laravel-pulse-is-better-than-telescope-for-monitoring-in-production-184c16fa1326",
-      image: "/images/laravel-pulse-dashboard.png",
+        "The AI era is reshaping what it means to be a developer. Discover the two emerging profiles and figure out which path you're on.",
+      link: "https://yassineaitsidibrahim.medium.com/two-types-of-developers-in-the-ai-era-which-one-are-you-feb6869f167f",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Su2TkPd2I0f7uhiHKIohkg.jpeg",
       publication: "Yassine Ait Sidi Brahim",
     },
   ]
 
-  // Separate featured article from regular articles
-  const featuredArticle = articles.find((article) => article.featured)
-  const regularArticles = articles.filter((article) => !article.featured)
+  const featuredArticle = articles.find((a) => a.featured)
+  const regularArticles = articles.filter((a) => !a.featured)
 
   return (
     <section id="medium" className="py-20 relative overflow-hidden bg-slate-950">
