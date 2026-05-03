@@ -80,7 +80,7 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "🛰️ GPS Fleet Management System",
           description:
-            "Supporting and improving a GPS fleet management platform tracking 500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
+            "Supporting and improving a GPS fleet management platform tracking 1500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
           links: [],
           images: [],
         },
@@ -94,7 +94,7 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "📊 Flespi Fleet Monitoring Dashboard",
           description:
-            "Designed and built a real-time Grafana dashboard connected to Flespi telematics, visualizing GPS positions, vehicle states, trip metrics, and alerts for 500+ devices — giving operators a live overview and reducing incident response time by ~30%.",
+            "Designed and built a real-time Grafana dashboard connected to Flespi telematics, visualizing GPS positions, vehicle states, trip metrics, and alerts for 1500+ devices — giving operators a live overview and reducing incident response time by ~30%.",
           links: [],
           images: [],
         },

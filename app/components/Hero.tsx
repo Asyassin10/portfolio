@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55 }}
           >
-            Every architecture is a miniature Valhalla.
+            Rule #1: Production isn’t a casino 🎲  — skipping tests turns it into one
           </motion.p>
 
           <motion.div
