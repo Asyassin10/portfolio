@@ -42,14 +42,14 @@ export default function Contact() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-indigo-500/40 hover:bg-indigo-500/10"
               >
                 <Github className="w-4 h-4 text-indigo-300" />
-                GitHub
+                @Asyassin10
               </a>
               <a
                 href="mailto:yassineaitsidibrahim@gmail.com"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-emerald-500/40 hover:bg-emerald-500/10"
               >
                 <Mail className="w-4 h-4 text-emerald-300" />
-                Email
+                yassineaitsidibrahim@gmail.com
               </a>
             </div>
 
