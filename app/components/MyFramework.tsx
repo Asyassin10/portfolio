@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import {
-  ArrowUpRight,
   Code2,
   Compass,
   ExternalLink,
@@ -44,7 +43,7 @@ export default function MyFramework() {
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading
           title="My Framework"
-          subtitle="Valhalla is my microservices-first PHP framework for lightweight APIs, internal tooling, and CLI-driven development."
+          subtitle="Valhalla is my PHP framework for clean APIs, service communication, and fast CLI-first development."
         />
 
         <motion.div
@@ -55,7 +54,7 @@ export default function MyFramework() {
           className="rounded-3xl border border-blue-500/20 bg-slate-900/80 backdrop-blur-xl overflow-hidden shadow-2xl shadow-blue-950/30"
         >
           <div className="p-8 sm:p-10">
-            <div className="grid xl:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+            <div className="grid xl:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
               <div>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-white/95 p-3 shadow-lg shadow-blue-950/20 shrink-0">
@@ -75,34 +74,53 @@ export default function MyFramework() {
                       A focused framework for developers who want fast JSON APIs, clean architecture, service-to-service
                       communication, and a CLI that helps you move quickly without carrying the overhead of a monolith.
                     </p>
+                    <p className="text-slate-400 mt-4 max-w-2xl leading-relaxed">
+                      I built Valhalla because I wanted backend development to feel lighter, clearer, and more free.
+                      My philosophy is simple: give developers strong structure where it matters, then stay out of the
+                      way so they can shape services the way they actually want to build them.
+                    </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4 mb-8">
-                  {highlights.map((item, index) => {
-                    const Icon = item.icon
-                    return (
-                      <motion.div
-                        key={item.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: index * 0.08 }}
-                        className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5"
-                      >
-                        <div className="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center mb-4">
-                          <Icon className="w-5 h-5 text-blue-300" />
+                <div className="rounded-3xl border border-blue-500/20 bg-slate-950/75 overflow-hidden shadow-xl shadow-blue-950/20 mb-8">
+                  <div className="px-6 py-5 border-b border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-rose-400" />
+                      <div className="w-3 h-3 rounded-full bg-amber-400" />
+                      <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                    </div>
+                    <div className="text-xs uppercase tracking-[0.24em] text-slate-500">CLI Quick Start</div>
+                  </div>
+
+                  <div className="p-6">
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35 }}
+                      className="rounded-2xl border border-slate-800 bg-slate-900/80 overflow-hidden"
+                    >
+                      <div className="px-4 py-3 border-b border-slate-800 flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center shrink-0">
+                          <Terminal className="w-4 h-4 text-blue-300" />
                         </div>
-                        <h4 className="text-white font-semibold mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
-                      </motion.div>
-                    )
-                  })}
+                        <div>
+                          <div className="text-xs uppercase tracking-[0.2em] text-slate-500">macOS Terminal</div>
+                          <div className="text-sm text-slate-300">Quick start</div>
+                        </div>
+                      </div>
+                      <div className="p-4 sm:p-5">
+                        <pre className="whitespace-pre-wrap break-words text-sm sm:text-[15px] leading-7 text-blue-100">
+                          <code>{commands.map((command) => `$ ${command}`).join("\n")}</code>
+                        </pre>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://valhalla.yassine-aitsidibrahim.space/"
+                    href="https://valhalla-fremwrok.space/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg shadow-blue-900/30"
@@ -122,49 +140,26 @@ export default function MyFramework() {
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-blue-500/20 bg-slate-950/75 overflow-hidden shadow-xl shadow-blue-950/20">
-                <div className="px-6 py-5 border-b border-slate-800 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-rose-400" />
-                    <div className="w-3 h-3 rounded-full bg-amber-400" />
-                    <div className="w-3 h-3 rounded-full bg-emerald-400" />
-                  </div>
-                  <div className="text-xs uppercase tracking-[0.24em] text-slate-500">CLI Quick Start</div>
-                </div>
-
-                <div className="p-6 space-y-4">
-                  {commands.map((command, index) => (
+              <div className="grid gap-4">
+                {highlights.map((item, index) => {
+                  const Icon = item.icon
+                  return (
                     <motion.div
-                      key={command}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      key={item.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.35, delay: index * 0.08 }}
-                      className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4"
+                      transition={{ duration: 0.4, delay: index * 0.08 }}
+                      className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5"
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="mt-0.5 w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center shrink-0">
-                          <Terminal className="w-4 h-4 text-blue-300" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-2">Command {index + 1}</div>
-                          <code className="text-sm sm:text-[15px] text-blue-100 break-all leading-relaxed">{command}</code>
-                        </div>
+                      <div className="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-400/20 flex items-center justify-center mb-4">
+                        <Icon className="w-5 h-5 text-blue-300" />
                       </div>
+                      <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                      <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
                     </motion.div>
-                  ))}
-
-                  <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-5">
-                    <div className="flex items-center gap-2 text-emerald-200 font-semibold mb-2">
-                      <ArrowUpRight className="w-4 h-4" />
-                      Great starting point
-                    </div>
-                    <p className="text-sm text-slate-300 leading-relaxed">
-                      Valhalla is ideal if you want to launch a clean PHP API fast, keep the architecture understandable,
-                      and still have practical developer tooling ready from day one.
-                    </p>
-                  </div>
-                </div>
+                  )
+                })}
               </div>
             </div>
           </div>

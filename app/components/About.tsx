@@ -2,24 +2,29 @@
 
 import type React from "react"
 
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import {
   Brain,
-  Code,
   Palette,
   Server,
   Database,
   Container,
-  TestTube,
-  Globe,
-  Kanban,
-  Monitor,
-  Building,
 } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 // Particle animation component
 const ParticleField = () => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {Array.from({ length: 50 }).map((_, i) => (
@@ -100,77 +105,36 @@ const SkillCategory = ({
 export default function About() {
   const skillCategories = [
     {
-      title: "Backend Frameworks",
-      skills: ["Laravel", "Symfony", "Spring Boot", "Spring Cloud", "REST API Design"],
+      title: "Backend",
+      skills: ["Laravel", "Symfony", "Spring Boot", "Node.js"],
       color: "purple",
       icon: Server,
     },
     {
-      title: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "PHP", "Java", "Python"],
-      color: "blue",
-      icon: Code,
-    },
-    {
-      title: "AI & LLMs",
-      skills: [
-        "Large Language Models (LLMs)",
-        "LangChain",
-        "MCP (Model Context Protocol)",
-        "RAG (Retrieval-Augmented Generation)",
-        "AI Agents & Tool Architectures",
-        "Text Embeddings",
-        "Vector Databases (Qdrant)",
-        "Cosine Similarity",
-        "Dot Product Search",
-        "Prompt Engineering",
-      ],
-      color: "orange",
-      icon: Brain,
-    },
-    {
-      title: "Cloud & DevOps",
-      skills: ["Docker", "Podman", "Git", "GitLab", "GitHub Actions", "Linux"],
-      color: "cyan",
-      icon: Container,
-    },
-    {
-      title: "Frontend Development",
-      skills: ["React.js", "Next.js", "React Native", "Bootstrap", "Tailwind CSS"],
+      title: "Frontend",
+      skills: ["React.js", "Next.js", "React Native"],
       color: "green",
       icon: Palette,
     },
     {
-      title: "Databases & Storage",
-      skills: ["MySQL", "PostgreSQL", "PostGIS", "Redis", "Amazon S3"],
+      title: "AI & LLM",
+      skills: ["RAG", "MCP", "LangChain", "Qdrant"],
+      color: "orange",
+      icon: Brain,
+    },
+    {
+      title: "DevOps & Cloud",
+      skills: ["Docker", "GitHub Actions", "Linux", "AWS"],
+      color: "cyan",
+      icon: Container,
+    },
+    {
+      title: "Databases",
+      skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB"],
       color: "red",
       icon: Database,
     },
-    {
-      title: "Testing & Quality Assurance",
-      skills: ["Selenium", "Cypress", "SonarQube", "Coverage", "Unit testing"],
-      color: "pink",
-      icon: TestTube,
-    },
-    {
-      title: "Project Management",
-      skills: ["Jira", "Trello", "Kanban", "Slack"],
-      color: "indigo",
-      icon: Kanban,
-    },
-    {
-      title: "Monitoring & BI",
-      skills: ["Grafana", "Metabase"],
-      color: "teal",
-      icon: Monitor,
-    },
-    {
-      title: "Systems & Software Architecture",
-      skills: ["Linux", "Microservices"],
-      color: "teal",
-      icon: Building,
-    },
-  ];
+  ]
 
 
   return (
@@ -207,17 +171,17 @@ export default function About() {
                     <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
                       <Brain className="w-6 h-6 text-indigo-400" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white font-display">Full-Stack Software Engineer & AI Engineer</h3>
+                    <h3 className="text-2xl font-bold text-white font-display">Full-Stack Software Engineer</h3>
                   </div>
 
-                  <p className="text-left text-xl text-slate-300 leading-relaxed">
-                    With 4 years of hands-on experience, curiosity has been my guide from day one.<br />
-                    I began by creating custom websites and solutions, then steadily progressed to designing full software systems and streamlining workflows.<br />
-                    My core expertise spans backend development with Laravel and Symfony,<br />
-                    frontend with React and Next.js, and mobile with React Native.<br />
-                    Recently, I've been drawn to integrating AI into real projects, building RAG systems, MCP server architectures, and LLM-powered features.<br />
-                    What excites me most now is exploring MLOps, model training, and cloud AI services with AWS—a path I'm actively learning and passionate about.<br />
-                    I'm always eager to grow, improve, and deliver better results.
+                  <p className="text-left text-lg text-slate-300 leading-relaxed">
+                    I build scalable products across backend and frontend, with a focus on clean architecture and fast execution.
+                    Comfortable picking up new languages and frameworks by relying on strong core engineering principles.
+                  </p>
+                  <p className="text-left text-lg text-slate-400 leading-relaxed mt-4">
+                    My philosophy is that while tools and syntax change, the underlying concepts system design, data flow,
+                    and problem-solving remain consistent. I focus on mastering those fundamentals and applying them across
+                    different stacks.
                   </p>
                 </div>
               </div>

@@ -1,92 +1,126 @@
 "use client"
 
+import { useForm, ValidationError } from "@formspree/react"
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, ExternalLink } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
-// Contact card component
-const ContactCard = ({
-  icon: Icon,
-  title,
-  content,
-  link,
-  delay,
-  color = "indigo",
-}: {
-  icon: any
-  title: string
-  content: string
-  link: string
-  delay: number
-  color?: string
-}) => {
-  const colors = {
-    indigo: "from-indigo-500/20 to-indigo-500/5 border-indigo-500/30 hover:border-indigo-500/50",
-    blue: "from-blue-500/20 to-blue-500/5 border-blue-500/30 hover:border-blue-500/50",
-    purple: "from-purple-500/20 to-purple-500/5 border-purple-500/30 hover:border-purple-500/50",
-  }
-
-  const bgColor = colors[color as keyof typeof colors] || colors.indigo
-
-  return (
-    <motion.a
-      href={link}
-      className={`bg-gradient-to-br ${bgColor} backdrop-blur-md p-8 rounded-xl border transition-all duration-300 hover:-translate-y-2 group shadow-lg`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-    >
-      <div className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-6 group-hover:bg-slate-700 transition-colors duration-300">
-        <Icon className={`w-8 h-8 text-${color}-400`} />
-      </div>
-      <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-slate-300 mb-4">{content}</p>
-      <div className="flex items-center text-indigo-400 text-sm">
-        <span>Connect</span>
-        <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-    </motion.a>
-  )
-}
-
 export default function Contact() {
+  const [state, handleSubmit] = useForm("mrejeobn")
+
   return (
     <section id="contact" className="py-20 relative overflow-hidden bg-slate-950">
-      {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Let's Connect" />
+        <SectionHeading title="Contact Me" />
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <ContactCard
-            icon={Mail}
-            title="Email"
-            content="pranaytadakamalla@gmail.com"
-            link="mailto:pranaytadakamalla@gmail.com"
-            delay={0.1}
-            color="indigo"
-          />
+        <motion.div
+          className="max-w-3xl mx-auto mt-12"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="rounded-2xl border border-indigo-500/20 bg-slate-900/80 backdrop-blur-md p-6 sm:p-8">
+            <div className="mb-8 text-center">            </div>
 
-          <ContactCard
-            icon={Phone}
-            title="Phone"
-            content="+91 - 86881 83168"
-            link="tel:+918688183168"
-            delay={0.2}
-            color="blue"
-          />
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+              <a
+                href="https://www.linkedin.com/in/yassine-brahim-0a91b23b5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-blue-500/40 hover:bg-blue-500/10"
+              >
+                <Linkedin className="w-4 h-4 text-blue-400" />
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/Asyassin10/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-indigo-500/40 hover:bg-indigo-500/10"
+              >
+                <Github className="w-4 h-4 text-indigo-300" />
+                GitHub
+              </a>
+              <a
+                href="mailto:yassineaitsidibrahim@gmail.com"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-emerald-500/40 hover:bg-emerald-500/10"
+              >
+                <Mail className="w-4 h-4 text-emerald-300" />
+                Email
+              </a>
+            </div>
 
-          <ContactCard
-            icon={MapPin}
-            title="Location"
-            content="Hyderabad, Telangana, India"
-            link="#"
-            delay={0.3}
-            color="purple"
-          />
-        </div>
+            {state.succeeded ? (
+              <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-4 text-emerald-200">
+                Thanks! I&apos;ll get back to you soon.
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                action="https://formspree.io/f/mrejeobn"
+                method="POST"
+                className="space-y-5"
+              >
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium text-slate-200">
+                    Your name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Yassine admirer"
+                    required
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                  />
+                  <ValidationError field="name" errors={state.errors} className="text-sm text-rose-300" />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-slate-200">
+                    Your email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                  />
+                  <ValidationError field="email" errors={state.errors} className="text-sm text-rose-300" />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-slate-200">
+                    Your message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder=""
+                    required
+                    rows={6}
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                  />
+                  <ValidationError field="message" errors={state.errors} className="text-sm text-rose-300" />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={state.submitting}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-6 py-3 font-medium text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  <Mail className="w-4 h-4" />
+                  {state.submitting ? "Sending..." : "Send"}
+                </button>
+              </form>
+            )}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

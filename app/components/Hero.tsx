@@ -3,8 +3,7 @@
 import type React from "react"
 
 import { motion } from "framer-motion"
-import { Linkedin, Mail, Github, BookOpen } from "lucide-react"
-import CodeEditorAnimation from "./CodeEditorAnimation"
+import { Download } from "lucide-react"
 import type { TypingAnimationProps } from "@/types"
 
 // TypingAnimation component defined inline
@@ -30,22 +29,11 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, delay = 0 }) =>
   )
 }
 
-// Helper function for smooth scrolling
-const smoothScrollTo = (elementId: string): void => {
-  const element = document.getElementById(elementId)
-  if (element) {
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
-  }
-}
-
 const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-slate-950 pt-20"
+      className="min-h-[46vh] md:min-h-[52vh] flex flex-col items-center justify-center relative overflow-hidden bg-slate-950 pt-24 pb-8"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900 to-slate-950 z-0"></div>
@@ -63,119 +51,59 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center">
-          {/* Text content */}
+        <motion.div
+          className="max-w-4xl mx-auto text-center py-2"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">
+            <span className="text-white">
+              <TypingAnimation text="Yassine Ait Sidi Brahim" />
+            </span>
+          </h1>
+
           <motion.div
-            className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            className="flex justify-center mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display">
-              <span className="text-white">
-                <TypingAnimation text="Yassine Ait Sidi Brahim" />
-              </span>
-            </h1>
-
-            <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-indigo-300 border border-indigo-500/20">
-                Full-Stack Software Engineer & AI Engineer
-              </span>
-            </motion.div>
-
-            <motion.p
-              className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto lg:mx-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              Not just writing code — building logic, shaping ideas, and solving real human problems through software.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-            >
-              <a
-                href="https://www.linkedin.com/in/yassine-brahim-0a91b23b5/"
-                className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
-                aria-label="LinkedIn Profile" target="__blank"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:yassineaitsidibrahim@gmail.com"
-                className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-red-600 hover:border-red-500 transition-all duration-300"
-                aria-label="Email Contact"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-              <a
-                href="https://github.com/Asyassin10/"
-                className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-gray-600 hover:border-gray-500 transition-all duration-300"
-                aria-label="GitHub Profile" target="__blank"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://yassineaitsidibrahim.medium.com/"
-                className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-green-600 hover:border-green-500 transition-all duration-300"
-                aria-label="Medium Profile" target="__blank"
-              >
-                <BookOpen className="w-6 h-6" />
-              </a>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-            >
-              <a
-                href="https://drive.google.com/file/d/1D-mqkAuHRwFSiCNktcI3eOp8gJTiIwvO/view?usp=sharing" target="__blank"
-                className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <span>Resume</span>
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-                >
-                  →
-                </motion.span>
-              </a>
-              <button
-                onClick={() => smoothScrollTo("about")}
-                className="px-8 py-3 border border-indigo-500 text-indigo-300 hover:bg-indigo-600/20 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <span>Show More</span>
-                <motion.span
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-                >
-                  ↓
-                </motion.span>
-              </button>
-            </motion.div>
+            <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-indigo-300 border border-indigo-500/20">
+              Full-Stack Software Engineer
+            </span>
           </motion.div>
 
-          {/* Code Editor Animation */}
-          <motion.div
-            className="lg:w-1/2 w-full"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+          <motion.p
+            className="text-lg md:text-xl text-slate-300 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55 }}
           >
-            <CodeEditorAnimation />
+            Every architecture is a miniature Valhalla.
+          </motion.p>
+
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75 }}
+          >
+            <a
+              href="#"
+              target="__blank"
+              className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <span>Resume</span>
+              <motion.div
+                animate={{ y: [0, 2, 0] }}
+                transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+              >
+                <Download className="w-4 h-4" />
+              </motion.div>
+            </a>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

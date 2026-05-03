@@ -73,7 +73,7 @@ const ExperienceComponent: React.FC = () => {
   const experiences: Experience[] = [
     {
       period: "Jan 2026 - Present",
-      role: "Full-Stack Software Engineer",
+      role: "Lead PHP Engineer & AI Integrations",
       company: "Pillot",
       color: "cyan",
       projects: [

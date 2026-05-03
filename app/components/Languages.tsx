@@ -20,9 +20,9 @@ const LanguageCard = ({ name, level, index }: { name: string; level: string; ind
 
 export default function Languages() {
   const languages = [
-    { name: "Arabic", level: "Native" },
-    { name: "English", level: "Professional" },
-    { name: "French", level: "Intermediate" },   
+    { name: "Arabic" },
+    { name: "English" },
+    { name: "French" },
   ]
 
   return (
@@ -32,7 +32,7 @@ export default function Languages() {
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading title="Languages" />
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {languages.map((lang, index) => (
             <LanguageCard key={index} name={lang.name} level={lang.level} index={index} />
           ))}

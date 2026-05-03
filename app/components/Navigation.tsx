@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Home, User, Briefcase, Code, Cpu, ChevronUp, BookOpen, Server, Package, Globe } from "lucide-react"
+import { Menu, X, Home, User, Briefcase, Code, Cpu, ChevronUp, BookOpen, Server, Package, Globe, Contact } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
 import type { NavItem } from "@/types"
 
@@ -23,10 +23,11 @@ const Navigation: React.FC = () => {
     { id: "experience", label: "Experience", icon: <Briefcase className="w-5 h-5" /> },
     { id: "projects", label: "Projects", icon: <Cpu className="w-5 h-5" /> },
     { id: "framework", label: "My Framework", icon: <Code className="w-5 h-5" /> },
-    { id: "dockerhub", label: "Docker Hub", icon: <Server className="w-5 h-5" /> },
     { id: "packages", label: "My Packages", icon: <Package className="w-5 h-5" /> },
     { id: "medium", label: "Medium", icon: <BookOpen className="w-5 h-5" /> },
     { id: "languages", label: "Languages", icon: <Globe className="w-5 h-5" /> },
+    { id: "Contact Me", label: "Contact Me", icon: <Contact className="w-5 h-5" /> },
+
   ]
 
   useEffect(() => {
@@ -95,11 +96,10 @@ const Navigation: React.FC = () => {
                 <motion.li key={item.id} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className={`relative px-3 py-2 rounded-full flex items-center gap-2 transition-colors ${
-                      activeSection === item.id
-                        ? "text-white bg-indigo-600"
-                        : "text-slate-300 hover:text-white hover:bg-slate-700/50"
-                    }`}
+                    className={`relative px-3 py-2 rounded-full flex items-center gap-2 transition-colors ${activeSection === item.id
+                      ? "text-white bg-indigo-600"
+                      : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                      }`}
                   >
                     {item.icon}
                     <span className="text-sm">{item.label}</span>
@@ -148,9 +148,8 @@ const Navigation: React.FC = () => {
                 >
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className={`text-2xl font-medium flex items-center gap-3 ${
-                      activeSection === item.id ? "text-indigo-400" : "text-slate-300"
-                    }`}
+                    className={`text-2xl font-medium flex items-center gap-3 ${activeSection === item.id ? "text-indigo-400" : "text-slate-300"
+                      }`}
                   >
                     {item.icon}
                     {item.label}
