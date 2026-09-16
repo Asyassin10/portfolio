@@ -1,211 +1,304 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import type { LucideIcon } from "lucide-react"
+import type { IconType } from "react-icons"
+import { FaAws } from "react-icons/fa"
 import {
+  SiDocker,
+  SiFastapi,
+  SiGithubactions,
+  SiLangchain,
+  SiLinux,
+  SiModelcontextprotocol,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPhp,
+  SiPodman,
+  SiPostgresql,
+  SiQdrant,
+  SiReact,
+  SiRedis,
+  SiSpringboot,
+} from "react-icons/si"
+import {
+  Bot,
+  Boxes,
   Brain,
-  Palette,
-  Server,
-  Database,
+  Cloud,
+  Code2,
   Container,
+  Database,
+  Github,
+  Layers3,
+  Monitor,
+  Network,
+  Search,
+  Server,
+  Smartphone,
+  Terminal,
+  Wrench,
 } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
-// Particle animation component
 const ParticleField = () => {
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  useEffect(() => setMounted(true), [])
 
-  if (!mounted) {
-    return null
-  }
+  if (!mounted) return null
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {Array.from({ length: 50 }).map((_, i) => (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {Array.from({ length: 22 }).map((_, index) => (
         <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-indigo-500/30"
+          key={index}
+          className="absolute h-1 w-1 rounded-full bg-indigo-500/25"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
-            scale: Math.random() * 0.5 + 0.5,
-            opacity: Math.random() * 0.5 + 0.3,
+            opacity: Math.random() * 0.35 + 0.15,
           }}
-          animate={{
-            x: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-            ],
-            y: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-            ],
-          }}
-          transition={{
-            duration: Math.random() * 20 + 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
+          animate={{ y: [Math.random() * 100 + "%", Math.random() * 100 + "%"] }}
+          transition={{ duration: Math.random() * 18 + 18, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         />
       ))}
     </div>
   )
 }
 
-// Skill category component
-const SkillCategory = ({
-  title,
-  skills,
-  color,
-  index,
-  icon: Icon,
-}: {
+type Tool = {
+  name: string
+  icon: LucideIcon
+  brandIcon?: IconType
+  anchor?: boolean
+}
+
+type SkillCategory = {
   title: string
-  skills: string[]
-  color: string
-  index: number
-  icon: React.ComponentType<{ className?: string }>
-}) => {
+  icon: LucideIcon
+  tools: Tool[]
+  tone: keyof typeof tones
+  className: string
+}
+
+const tones = {
+  violet: {
+    border: "border-violet-400/25 hover:border-violet-400/45",
+    icon: "bg-violet-500/15 text-violet-300 ring-violet-400/20",
+    chip: "border-violet-400/15 bg-violet-500/[0.07] text-violet-100",
+    anchor: "border-violet-400/35 bg-violet-500/15 text-violet-50 shadow-sm shadow-violet-500/10",
+    glow: "bg-violet-500/10",
+  },
+  blue: {
+    border: "border-blue-400/25 hover:border-blue-400/45",
+    icon: "bg-blue-500/15 text-blue-300 ring-blue-400/20",
+    chip: "border-blue-400/15 bg-blue-500/[0.07] text-blue-100",
+    anchor: "border-blue-400/35 bg-blue-500/15 text-blue-50 shadow-sm shadow-blue-500/10",
+    glow: "bg-blue-500/10",
+  },
+  emerald: {
+    border: "border-emerald-400/20 hover:border-emerald-400/40",
+    icon: "bg-emerald-500/15 text-emerald-300 ring-emerald-400/20",
+    chip: "border-emerald-400/15 bg-emerald-500/[0.07] text-emerald-100",
+    anchor: "border-emerald-400/35 bg-emerald-500/15 text-emerald-50 shadow-sm shadow-emerald-500/10",
+    glow: "bg-emerald-500/[0.08]",
+  },
+  rose: {
+    border: "border-rose-400/20 hover:border-rose-400/40",
+    icon: "bg-rose-500/15 text-rose-300 ring-rose-400/20",
+    chip: "border-rose-400/15 bg-rose-500/[0.07] text-rose-100",
+    anchor: "border-rose-400/35 bg-rose-500/15 text-rose-50 shadow-sm shadow-rose-500/10",
+    glow: "bg-rose-500/[0.08]",
+  },
+  cyan: {
+    border: "border-cyan-400/20 hover:border-cyan-400/40",
+    icon: "bg-cyan-500/15 text-cyan-300 ring-cyan-400/20",
+    chip: "border-cyan-400/15 bg-cyan-500/[0.07] text-cyan-100",
+    anchor: "border-cyan-400/35 bg-cyan-500/15 text-cyan-50 shadow-sm shadow-cyan-500/10",
+    glow: "bg-cyan-500/[0.08]",
+  },
+}
+
+const categories: SkillCategory[] = [
+  {
+    title: "AI & LLM",
+    icon: Brain,
+    tone: "violet",
+    className: "lg:col-span-7",
+    tools: [
+      { name: "AWS Bedrock", icon: Cloud, brandIcon: FaAws, anchor: true },
+      { name: "RAG", icon: Search, anchor: true },
+      { name: "Amazon SageMaker", icon: Cloud, brandIcon: FaAws },
+      { name: "MCP", icon: Network, brandIcon: SiModelcontextprotocol },
+      { name: "LangChain", icon: Brain, brandIcon: SiLangchain },
+      { name: "Qdrant", icon: Database, brandIcon: SiQdrant },
+      { name: "Voice agents", icon: Bot },
+    ],
+  },
+  {
+    title: "Backend",
+    icon: Server,
+    tone: "blue",
+    className: "lg:col-span-5",
+    tools: [
+      { name: "PHP", icon: Server, brandIcon: SiPhp, anchor: true },
+      { name: "Spring Boot", icon: Layers3, brandIcon: SiSpringboot },
+      { name: "Node.js", icon: Server, brandIcon: SiNodedotjs },
+      { name: "FastAPI", icon: Server, brandIcon: SiFastapi },
+      { name: "REST APIs", icon: Network },
+    ],
+  },
+  {
+    title: "Frontend",
+    icon: Monitor,
+    tone: "emerald",
+    className: "lg:col-span-6",
+    tools: [
+      { name: "React.js", icon: Code2, brandIcon: SiReact, anchor: true },
+      { name: "Next.js", icon: Monitor, brandIcon: SiNextdotjs, anchor: true },
+    ],
+  },
+  {
+    title: "Mobile",
+    icon: Smartphone,
+    tone: "emerald",
+    className: "lg:col-span-6",
+    tools: [
+      { name: "React Native", icon: Smartphone, brandIcon: SiReact, anchor: true },
+    ],
+  },
+  {
+    title: "Databases",
+    icon: Database,
+    tone: "rose",
+    className: "lg:col-span-6",
+    tools: [
+      { name: "PostgreSQL", icon: Database, brandIcon: SiPostgresql },
+      { name: "MySQL", icon: Database, brandIcon: SiMysql },
+      { name: "Redis", icon: Boxes, brandIcon: SiRedis },
+      { name: "MongoDB", icon: Boxes, brandIcon: SiMongodb },
+    ],
+  },
+  {
+    title: "Tooling & Infra",
+    icon: Wrench,
+    tone: "cyan",
+    className: "lg:col-span-6",
+    tools: [
+      { name: "Docker", icon: Container, brandIcon: SiDocker },
+      { name: "Podman", icon: Container, brandIcon: SiPodman },
+      { name: "GitHub Actions", icon: Github, brandIcon: SiGithubactions },
+      { name: "AWS", icon: Cloud, brandIcon: FaAws },
+      { name: "Linux", icon: Terminal, brandIcon: SiLinux },
+    ],
+  },
+]
+
+const SkillCard = ({ category, index }: { category: SkillCategory; index: number }) => {
+  const Icon = category.icon
+  const tone = tones[category.tone]
+
   return (
-    <motion.div
-      className={`bg-slate-900/80 backdrop-blur-md p-6 rounded-2xl border border-${color}-500/20 group hover:border-${color}-500/40 transition-all duration-300`}
-      whileHover={{ y: -5 }}
-      initial={{ opacity: 0, y: 20 }}
+    <motion.article
+      className={`group relative overflow-hidden rounded-3xl border bg-slate-900/65 p-5 shadow-xl shadow-slate-950/25 backdrop-blur-md transition-colors sm:p-6 ${tone.border} ${category.className}`}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.3, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, delay: index * 0.06 }}
     >
-      <div className="flex items-center mb-4">
-        <div className={`p-2 rounded-full bg-${color}-500/20 mr-3`}>
-          <Icon className={`w-5 h-5 text-${color}-400`} />
-        </div>
-        <h3 className={`text-xl font-semibold text-${color}-400`}>{title}</h3>
-      </div>
-      <div className="space-y-2">
-        {skills.map((skill, skillIndex) => (
-          <div key={skillIndex} className="flex items-center">
-            <span className="text-slate-300 text-sm">{skill}</span>
+      <div className={`absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl ${tone.glow}`} />
+      <div className="relative">
+        <div className="flex items-center gap-3">
+          <div className={`flex h-10 w-10 items-center justify-center rounded-xl ring-1 ${tone.icon}`}>
+            <Icon className="h-5 w-5" />
           </div>
-        ))}
+          <h3 className="font-display text-lg font-semibold text-white">{category.title}</h3>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {category.tools.map((tool) => {
+            const ToolIcon = tool.brandIcon ?? tool.icon
+            return (
+              <span
+                key={tool.name}
+                className={`inline-flex items-center gap-1.5 rounded-lg border ${tool.anchor
+                  ? `px-3 py-2 text-sm font-semibold ${tone.anchor}`
+                  : `px-2.5 py-1.5 text-xs font-medium ${tone.chip}`}`}
+              >
+                <ToolIcon className={tool.anchor ? "h-4 w-4" : "h-3.5 w-3.5 opacity-80"} aria-hidden="true" />
+                {tool.name}
+              </span>
+            )
+          })}
+        </div>
       </div>
-    </motion.div>
+    </motion.article>
   )
 }
 
 export default function About() {
-  const skillCategories = [
-    {
-      title: "Backend",
-      skills: ["Laravel", "Symfony", "Spring Boot", "Node.js"],
-      color: "purple",
-      icon: Server,
-    },
-    {
-      title: "Frontend",
-      skills: ["React.js", "Next.js", "React Native"],
-      color: "green",
-      icon: Palette,
-    },
-    {
-      title: "AI & LLM",
-      skills: ["RAG", "MCP", "LangChain", "Qdrant"],
-      color: "orange",
-      icon: Brain,
-    },
-    {
-      title: "DevOps & Cloud",
-      skills: ["Docker", "GitHub Actions", "Linux", "AWS"],
-      color: "cyan",
-      icon: Container,
-    },
-    {
-      title: "Databases",
-      skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB"],
-      color: "red",
-      icon: Database,
-    },
-  ]
-
-
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-slate-950">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
+    <section id="about" className="relative overflow-hidden bg-slate-950 py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(79,70,229,0.1),transparent_38%)]" />
       <ParticleField />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-6">
         <SectionHeading title="About Me" />
 
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-14">
           <motion.div
-            className="max-w-5xl mx-auto w-full"
-            initial={{ opacity: 0, y: -50 }}
+            className="mx-auto w-full max-w-5xl"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-indigo-500/20">
-              <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 xl:gap-10 items-center">
+            <div className="rounded-3xl border border-indigo-500/20 bg-slate-900/70 p-6 backdrop-blur-md sm:p-8">
+              <div className="grid items-center gap-8 lg:grid-cols-[0.78fr_1.22fr] xl:gap-10">
                 <div className="flex justify-center lg:justify-start">
-                  <div className="relative w-full max-w-[360px] h-[420px] sm:h-[500px] rounded-[2rem] overflow-hidden border border-indigo-500/30 shadow-2xl shadow-indigo-950/30 bg-slate-950">
+                  <div className="relative h-[360px] w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-indigo-500/30 bg-white shadow-2xl shadow-indigo-950/30 sm:h-[420px]">
                     <img
-                      src="/yassine-ait-sidibrahim.png"
+                      src="/images/yassine-portrait-white.png"
                       alt="Yassine Ait Sidi Brahim portrait"
-                      className="w-full h-full object-cover object-center object-[center_8%]"
+                      className="h-full w-full object-cover object-[center_25%]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent" />
                   </div>
                 </div>
                 <div className="w-full">
-                  <div className="flex items-center justify-center lg:justify-start mb-6">
-                    <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
-                      <Brain className="w-6 h-6 text-indigo-400" />
+                  <div className="mb-5 flex items-center justify-center gap-3 lg:justify-start">
+                    <div className="rounded-xl bg-indigo-500/15 p-2.5 ring-1 ring-indigo-400/20">
+                      <Brain className="h-5 w-5 text-indigo-300" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white font-display">Full-Stack Software Engineer</h3>
+                    <h2 className="font-display text-2xl font-bold text-white">Full-Stack &amp; GenAI Software Engineer</h2>
                   </div>
-
-                  <p className="text-left text-lg text-slate-300 leading-relaxed">
-                    I build scalable products across backend and frontend, with a focus on clean architecture and fast execution.
-                    Comfortable picking up new languages and frameworks by relying on strong core engineering principles.
+                  <p className="text-left text-lg leading-relaxed text-slate-300">
+                    With 4 years of experience, I&apos;ve grown from full-stack engineering — Laravel, Spring Boot, React/Next.js — into AI and machine learning: RAG pipelines, voice agents, MCP integrations, and the MLOps work that keeps models running in production, not just performing well in a notebook.
                   </p>
-                  <p className="text-left text-lg text-slate-400 leading-relaxed mt-4">
-                    My philosophy is that while tools and syntax change, the underlying concepts system design, data flow,
-                    and problem-solving remain consistent. I focus on mastering those fundamentals and applying them across
-                    different stacks.
+                  <p className="mt-4 text-left text-lg leading-relaxed text-slate-400">
+                    What hasn&apos;t changed is the mindset: clean architecture, systems that hold up under real traffic, and shipping things that work — not things that just demo well.
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          <motion.div
-            className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            {skillCategories.map((category, index) => (
-              <SkillCategory
-                key={index}
-                title={category.title}
-                skills={category.skills}
-                color={category.color}
-                index={index}
-                icon={category.icon}
-              />
-            ))}
-          </motion.div>
+          <div id="skills" className="w-full scroll-mt-24">
+            <div className="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+              <div>
+                <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">Tools I use to ship.</h2>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12">
+              {categories.map((category, index) => (
+                <SkillCard key={category.title} category={category} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

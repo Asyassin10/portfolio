@@ -1,0 +1,99 @@
+.page {
+  --paper: #f6e7d4;
+  --gold: #d49b52;
+  --muted: #b6a899;
+  --rule: #39312b;
+  background: #191714;
+  color: var(--paper);
+  font-family: var(--font-inter), sans-serif;
+}
+.container { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+.hero { padding-top: 130px; }
+.back { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; margin-bottom: 56px; }
+.back:hover { color: var(--gold); }
+.heroGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.eyebrow, .number, .projectFacts dt { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); }
+.wordmark { display: flex; align-items: center; gap: 14px; font-size: clamp(48px, 5vw, 72px); font-weight: 650; letter-spacing: -.055em; line-height: 1.15; margin: 22px 0 26px; }
+.wordmark img { flex-shrink: 0; width: 64px; height: 64px; }
+.period { color: var(--gold); margin-left: -13px; }
+.headline { font: 400 clamp(25px, 2.6vw, 35px)/1.3 Georgia, serif; letter-spacing: -.025em; }
+.headline em { color: var(--gold); font-weight: 400; }
+.intro { margin-top: 22px; font-size: 15px; line-height: 1.85; color: var(--muted); max-width: 490px; }
+.links { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-top: 28px; font-size: 13px; }
+.links a { display: inline-flex; gap: 9px; align-items: center; transition: color 150ms; }
+.links a:hover { color: var(--gold); }
+.links .primaryLink { background: var(--gold); color: #241a10; padding: 12px 17px; border-radius: 3px; font-weight: 600; }
+.links .primaryLink:hover { background: var(--paper); color: #241a10; }
+.demo { min-width: 0; }
+.video { display: block; position: relative; aspect-ratio: 16/9; background: #100f0d; border: 1px solid var(--rule); }
+.videoPoster { object-fit: cover; }
+.playLabel { position: absolute; bottom: 14px; left: 14px; display: flex; align-items: center; gap: 8px; background: #191714; color: var(--paper); padding: 10px 12px; font-size: 12px; border: 1px solid var(--rule); }
+.video:hover .playLabel { color: var(--gold); }
+.demo figcaption { display: flex; flex-direction: column; gap: 7px; margin-top: 16px; font-size: 12px; color: var(--muted); }
+.demo figcaption span { color: var(--paper); font-weight: 500; }
+.projectFacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 25px 0; margin-top: 64px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.projectFacts dt { font-size: 10px; color: var(--muted); }
+.projectFacts dd { margin-top: 9px; font-size: 14px; }
+.section { padding: 90px 0; border-bottom: 1px solid var(--rule); }
+.sectionHeading { display: grid; grid-template-columns: 230px 1fr; gap: 36px; margin-bottom: 44px; align-items: start; }
+.number { padding-top: 12px; }
+.sectionHeading h2 { font: 400 clamp(30px, 3vw, 42px)/1.2 Georgia, serif; letter-spacing: -.025em; }
+.sectionHeading p { color: var(--muted); line-height: 1.8; font-size: 15px; max-width: 640px; margin-top: 17px; }
+.phoneGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.phoneGrid figure, .adminGrid figure { min-width: 0; }
+.phoneImage { position: relative; aspect-ratio: 9/19.5; background: #211e19; border-radius: 12px; overflow: hidden; border: 1px solid var(--rule); }
+.contain { object-fit: contain; object-position: top; }
+.caption { padding-top: 20px; }
+.caption h3 { font-weight: 500; font-size: 16px; }
+.caption p { color: var(--muted); line-height: 1.7; font-size: 13px; margin-top: 8px; max-width: 650px; }
+.adminGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 28px; align-items: start; }
+.featuredScreen { grid-column: 1/-1; }
+.imageLink { display: block; overflow: hidden; border-radius: 4px; background: var(--paper); border: 1px solid var(--rule); }
+.screenshot { display: block; width: 100%; height: auto; }
+.workflows { display: grid; gap: 64px; }
+.workflow figcaption { display: flex; align-items: baseline; gap: 22px; margin-bottom: 24px; max-width: 880px; }
+.workflowNumber { color: var(--gold); font-size: 13px; font-variant-numeric: tabular-nums; }
+.workflow h3 { font-size: 21px; font-weight: 500; }
+.workflow p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-top: 10px; }
+.stack > div { display: grid; grid-template-columns: 230px 1fr; gap: 36px; padding: 20px 0; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.7; }
+.stack > div:first-child { border-top: 1px solid var(--rule); }
+.stack dt { color: var(--gold); }
+.stack dd { color: var(--muted); }
+.footer { padding: 36px 0 52px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.footerBrand { display: flex; gap: 10px; align-items: center; font-size: 20px; font-weight: 600; letter-spacing: -.04em; }
+.footer .links { margin-top: 0; color: var(--muted); }
+.page a:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+@media (max-width: 1000px) {
+  .container { padding: 0 32px; }
+  .heroGrid { grid-template-columns: 1fr; gap: 42px; }
+  .heroGrid > div { max-width: 660px; }
+  .intro { max-width: 620px; }
+  .sectionHeading { grid-template-columns: 160px 1fr; gap: 24px; }
+  .phoneGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
+  .phoneImage { max-width: 300px; margin: 0 auto; }
+  .stack > div { grid-template-columns: 160px 1fr; gap: 24px; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 22px; }
+  .hero { padding-top: 104px; }
+  .back { margin-bottom: 38px; }
+  .wordmark { font-size: 52px; gap: 10px; }
+  .wordmark img { width: 48px; height: 48px; }
+  .headline { font-size: 29px; }
+  .projectFacts { grid-template-columns: 1fr; gap: 19px; margin-top: 38px; }
+  .projectFacts > div { display: grid; grid-template-columns: 108px 1fr; gap: 12px; align-items: baseline; }
+  .projectFacts dd { margin: 0; font-size: 13px; }
+  .section { padding: 56px 0; }
+  .sectionHeading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 32px; }
+  .sectionHeading h2 { font-size: 32px; }
+  .number { padding-top: 0; }
+  .phoneGrid { gap: 28px 14px; }
+  .caption h3 { font-size: 14px; }
+  .caption p { font-size: 12px; }
+  .adminGrid { grid-template-columns: 1fr; gap: 32px; }
+  .workflows { gap: 42px; }
+  .workflow figcaption { gap: 12px; }
+  .workflow h3 { font-size: 19px; }
+  .stack > div { grid-template-columns: 1fr; gap: 7px; padding: 16px 0; }
+  .footer { align-items: flex-start; flex-direction: column; }
+}

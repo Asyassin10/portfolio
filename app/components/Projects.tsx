@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Github, Star, GitFork, Eye, ExternalLink, Sparkles, Play } from "lucide-react"
+import Link from "next/link"
 import SectionHeading from "./SectionHeading"
 import { useState } from "react"
 
@@ -33,6 +34,7 @@ interface WebProject {
   architectureUrl?: string
   galleryImages?: string[]
   youtubeUrl?: string
+  repoUrl?: string
   order?: number
 }
 
@@ -234,15 +236,24 @@ const WebProjectCard = ({ project, index }: { project: WebProject; index: number
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <a
+                <Link
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-medium bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white transition-all duration-300 shadow-lg hover:shadow-yellow-500/30"
                 >
                   <ExternalLink className="w-4 h-4" />
                   {project.ctaLabel || "Explore Project"}
-                </a>
+                </Link>
+                {project.repoUrl ? (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-medium border border-yellow-500/30 bg-yellow-500/10 text-yellow-100 transition-all duration-300 hover:bg-yellow-500/20"
+                  >
+                    <Github className="w-4 h-4" />
+                    View source on GitHub
+                  </a>
+                ) : null}
                 {project.architectureUrl ? (
                   <a
                     href={project.architectureUrl}
@@ -307,20 +318,22 @@ const WebProjectCard = ({ project, index }: { project: WebProject; index: number
 
 export default function Projects() {
   // GitHub repositories data
-  const repositories: Repository[] = [
-
-    {
-      id: 1,
-      name: "voice-ai-assistant",
-      language: "Python",
-      url: "https://github.com/Asyassin10/voice-ai-assistant",
-      tags: ["Whisper STT", "LLM", "Kokoro TTS", "Qdrant", "RAG"],
-      description: "Multilingual voice assistant (French & Arabic) using Whisper STT, local LLM, Kokoro TTS, and Qdrant for context-aware responses.",
-      order: 4,
-    },
-  ]
+  const repositories: Repository[] = []
 
   const webProjects: WebProject[] = [
+    {
+      id: 9,
+      name: "CallDine",
+      description: "An AI voice restaurant assistant that answers menu questions, takes orders, books tables, and gives staff one place to manage every AI-assisted customer interaction.",
+      url: "/projects/calldine",
+      backgroundImage: "/images/calldine/featured-cover.png",
+      tags: ["Next.js", "FastAPI", "AWS Bedrock", "RAG", "Voice AI", "Qdrant", "MCP"],
+      isFeatured: true,
+      ctaLabel: "Read the case study",
+      repoUrl: "https://github.com/Asyassin10/CallDine",
+      youtubeUrl: "https://www.youtube.com/watch?v=02UnSYEdlA8",
+      order: 1,
+    },
     {
       id: 8,
       name: "EadgeQuery",
@@ -329,11 +342,10 @@ export default function Projects() {
       backgroundImage: "/eadge.png",
       galleryImages: ["/images/laravel-pulse-dashboard.png", "/images/scramble-api-docs.png"],
       tags: ["AI", "SQL", "Natural Language", "Data Analysis", "Microservices", "Spring Boot", "LLM", "RAG"],
-      isFeatured: true,
       ctaLabel: "Open EadgeQuery",
       architectureUrl: "https://eadgequery.space/architecture",
       youtubeUrl: "https://youtu.be/iSPLAIAIoPI",
-      order: 1,
+      order: 2,
     },
     {
       id: 4,
@@ -342,17 +354,7 @@ export default function Projects() {
       url: "https://www.meetpe.fr/",
       backgroundImage: "/images/meetpe-app.png",
       tags: ["Backend", "Mobile", "Real-time", "Matching Algorithm"],
-      order: 2,
-    },
-    {
-      id: 7,
-      name: "moroccan-id-ocr",
-      description: "A Dockerized OCR service focused on extracting structured data from Moroccan ID cards with a lightweight API workflow.",
-      url: "https://hub.docker.com/repository/docker/yassine374/moroccan-id-ocr/general",
-      backgroundImage: "/images/moroccan-id-ocr.png",
-      tags: ["Docker", "OCR", "Python", "Flask", "EasyOCR"],
-      ctaLabel: "View on Docker Hub",
-      order: 5,
+      order: 3,
     },
     {
       id: 5,
@@ -391,7 +393,7 @@ export default function Projects() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Projects" subtitle="Open-source repositories and development projects" />
+        <SectionHeading title="Personal Projects" subtitle="Selected development projects" />
 
         {/* Featured Project Highlight */}
         <motion.div
@@ -402,7 +404,7 @@ export default function Projects() {
           className="mb-12"
         >
           <p className="text-center text-slate-300 max-w-2xl mx-auto">
-            Check out my flagship project that transforms complex data queries into simple conversations
+            Explore my flagship AI voice experience for restaurant customers and operations teams.
           </p>
         </motion.div>
 

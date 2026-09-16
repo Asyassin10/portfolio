@@ -78,21 +78,21 @@ const ExperienceComponent: React.FC = () => {
       color: "cyan",
       projects: [
         {
-          title: "🛰️ GPS Fleet Management System",
+          title: "GPS Fleet Management System",
           description:
             "Supporting and improving a GPS fleet management platform tracking 1500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
           links: [],
           images: [],
         },
         {
-          title: "🤖 MCP Fleet AI Integration",
+          title: "MCP Fleet AI Integration",
           description:
             "Built and maintained MCP (Model Context Protocol) integrations exposing fleet data to AI agents, enabling natural language queries across 10+ data sources including vehicles, trips, and alerts — cutting average query time from minutes to seconds.",
           links: [],
           images: [],
         },
         {
-          title: "📊 Flespi Fleet Monitoring Dashboard",
+          title: "Flespi Fleet Monitoring Dashboard",
           description:
             "Designed and built a real-time Grafana dashboard connected to Flespi telematics, visualizing GPS positions, vehicle states, trip metrics, and alerts for 1500+ devices — giving operators a live overview and reducing incident response time by ~30%.",
           links: [],
@@ -107,35 +107,35 @@ const ExperienceComponent: React.FC = () => {
       color: "indigo",
       projects: [
         {
-          title: "🌐 Document Validation System for Lawyers",
+          title: "Document Validation System for Lawyers",
           description:
             "Optimized and maintained a legal document validation system used by 70,000+ lawyers in France. Migrated file storage to Amazon S3 (reducing storage costs by 35%) and implemented electronic signatures via CertEurope APIs. Built with Symfony and Angular.",
           links: [{ url: "https://cnb.avocat.fr/fr", label: "CNB Platform" }],
           images: [],
         },
         {
-          title: "💳 Payment Module Maintenance",
+          title: "Payment Module Maintenance",
           description:
             "Maintained and supervised the payment module of the CNB platform, ensuring transaction stability and compliance. Actively participated in developing and improving the e-learning platform.",
           links: [{ url: "https://formations.avocat.fr", label: "E-Learning Platform" }],
           images: [],
         },
         {
-          title: "📋 Multi-Platform Billing API",
+          title: "Multi-Platform Billing API",
           description:
             "Designed a generic multi-platform billing API to facilitate invoice generation and streamline management processes.",
           links: [],
           images: [],
         },
         {
-          title: "📱 Meetpe Mobile App Backend",
+          title: "Meetpe Mobile App Backend",
           description:
             "Developed and deployed the backend for the Meetpe mobile app, connecting travelers with local guides. Implemented real-time push notifications and a matching algorithm handling 1,000+ daily matches with sub-200ms response time.",
           links: [{ url: "https://www.meetpe.fr", label: "Meetpe Website" }],
           images: [{ src: "/images/meetpe-app.png", alt: "Meetpe mobile app interface showing a local guide profile" }],
         },
         {
-          title: "🛠️ Laravel Solution for Accountants",
+          title: "Laravel Solution for Accountants",
           description:
             "Developed a Laravel solution for the Order of Chartered Accountants, integrating an optimized e-commerce platform and secure authentication via CAS.",
           links: [{ url: "https://www.experts-comptables.fr", label: "Experts-Comptables" }],
@@ -150,21 +150,21 @@ const ExperienceComponent: React.FC = () => {
       color: "blue",
       projects: [
         {
-          title: "🌐 Social Media Management Platform",
+          title: "Social Media Management Platform",
           description:
             "Worked on the EsyApp24 project, a web platform for managing social media publications. Developed the web interface using Laravel and integrated APIs and SDKs for major social platforms like Facebook, LinkedIn, YouTube, and Twitter.",
           links: [],
           images: [],
         },
         {
-          title: "🔄 Content Scheduling System",
+          title: "Content Scheduling System",
           description:
             "Implemented features allowing users to schedule, publish, and manage their content across multiple networks from a centralized interface.",
           links: [],
           images: [],
         },
         {
-          title: "🔐 OAuth Authentication",
+          title: "OAuth Authentication",
           description:
             "Set up authentication via OAuth for each social network, optimizing API communication to ensure smooth performance and good user experience.",
           links: [],
@@ -179,7 +179,7 @@ const ExperienceComponent: React.FC = () => {
       color: "violet",
       projects: [
         {
-          title: "🌐 Beauty Appointment Platform",
+          title: "Beauty Appointment Platform",
           description:
             "Developed the WECARE platform, an online beauty appointment solution in Morocco. Built the back-end with Laravel, using Blade for views and AJAX for dynamic API calls.",
           links: [],
@@ -189,21 +189,21 @@ const ExperienceComponent: React.FC = () => {
           ],
         },
         {
-          title: "🔄 REST API Development",
+          title: "REST API Development",
           description:
             "Created and managed a REST API to ensure communication between the front-end and back-end. Tracked and organized tasks via Trello using an agile method.",
           links: [],
           images: [],
         },
         {
-          title: "📱 Mobile App Maintenance",
+          title: "Mobile App Maintenance",
           description:
             "Maintained the hybrid mobile application developed with Ionic + Angular, using a WebView to integrate the web interface.",
           links: [],
           images: [],
         },
         {
-          title: "🚀 CI/CD Implementation",
+          title: "CI/CD Implementation",
           description: "Set up GitHub Actions for automating tests and continuous deployments.",
           links: [],
           images: [],

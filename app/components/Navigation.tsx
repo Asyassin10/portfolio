@@ -7,12 +7,15 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Home, User, Briefcase, Code, Cpu, ChevronUp, BookOpen, Server, Package, Globe, Contact } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
 import type { NavItem } from "@/types"
+import { usePathname, useRouter } from "next/navigation"
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [activeSection, setActiveSection] = useState<string>("hero")
   const [scrollY, setScrollY] = useState<number>(0)
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false)
+  const pathname = usePathname()
+  const router = useRouter()
 
   // Use a ref to track the previous active section to prevent unnecessary updates
   const prevActiveSectionRef = useRef<string>(activeSection)
@@ -70,6 +73,12 @@ const Navigation: React.FC = () => {
   }, []) // Remove the dependency array to prevent re-running on every activeSection change
 
   const handleNavClick = (id: string): void => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`)
+      setIsOpen(false)
+      return
+    }
+
     smoothScrollTo(id)
     setIsOpen(false)
     setActiveSection(id)
