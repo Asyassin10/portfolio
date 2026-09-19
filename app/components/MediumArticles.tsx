@@ -168,11 +168,11 @@ export default function MediumArticles() {
     },
     {
       id: 5,
-      title: "The Modern Way to Communicate Between Microservices",
+      title: "Building CallDine: A Restaurant AI Assistant with FastAPI, Next.js, and AWS",
       excerpt:
-        "Explore modern patterns for microservice communication — from REST and gRPC to event-driven messaging — and how to choose the right approach for your architecture.",
-      link: "https://yassineaitsidibrahim.medium.com/the-modern-way-to-communicate-between-microservices-577372272cdd",
-      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*f01VfADWY_AbBMbt.png",
+        "How I built CallDine, an AI voice restaurant assistant, with FastAPI, Next.js, and AWS to handle customer calls, orders, and reservations.",
+      link: "https://yassineaitsidibrahim.medium.com/building-calldine-a-restaurant-ai-assistant-with-fastapi-next-js-and-aws-189d5d649de9",
+      image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*inw24h-AP_y4UdLOLV6Ppg.png",
       publication: "Yassine Ait Sidi Brahim",
     },
     {

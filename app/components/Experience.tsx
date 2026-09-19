@@ -78,16 +78,16 @@ const ExperienceComponent: React.FC = () => {
       color: "cyan",
       projects: [
         {
-          title: "GPS Fleet Management System",
+          title: "MCP Fleet AI Integration",
           description:
-            "Supporting and improving a GPS fleet management platform tracking 1500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
+            "Built and maintained MCP (Model Context Protocol) integrations exposing fleet data to AI agents, enabling natural language queries across 10+ data sources including vehicles, trips, and alerts — cutting average query time from minutes to seconds.",
           links: [],
           images: [],
         },
         {
-          title: "MCP Fleet AI Integration",
+          title: "GPS Fleet Management System",
           description:
-            "Built and maintained MCP (Model Context Protocol) integrations exposing fleet data to AI agents, enabling natural language queries across 10+ data sources including vehicles, trips, and alerts — cutting average query time from minutes to seconds.",
+            "Supporting and improving a GPS fleet management platform tracking 1500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
           links: [],
           images: [],
         },

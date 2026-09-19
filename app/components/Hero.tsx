@@ -18,13 +18,13 @@ const Hero: React.FC = () => {
 
       <div className="container relative z-10 mx-auto px-6">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          {/* LEFT: name, title, subtitle, two buttons */}
+          {/* LEFT: name, title, resume, and certification */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
           >
-            <p className="mb-5 text-sm font-semibold tracking-[0.08em] text-slate-300">
+            <p className="mb-5 font-display text-xl font-bold tracking-tight text-white sm:text-2xl">
               Yassine Ait Sidi Brahim
             </p>
 
@@ -57,20 +57,20 @@ const Hero: React.FC = () => {
                   className="h-10 w-10 object-contain"
                 />
                 <span className="whitespace-nowrap text-sm font-semibold text-slate-200">
-                  AI Practitioner — Foundational
+                  AI Practitioner Foundational
                 </span>
               </div>
             </div>
           </motion.div>
 
-          {/* RIGHT: big square image with pin badge overlaid on top */}
+          {/* RIGHT: featured project media and its actions as one group */}
           <motion.div
-            className="relative w-full"
+            className="relative w-full overflow-hidden rounded-2xl border border-indigo-400/20 bg-slate-900/60 p-2 shadow-2xl shadow-indigo-950/30"
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, delay: 0.15 }}
           >
-            <div className="relative w-full overflow-hidden rounded-2xl border border-indigo-400/20 bg-slate-900 shadow-2xl shadow-indigo-950/30">
+            <div className="relative w-full overflow-hidden rounded-xl bg-slate-900">
               <Image
                 src="/images/calldine/featured-cover.png"
                 alt="CallDine restaurant AI presentation video thumbnail"
@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
               </span>
             </div>
 
-            <div className="mt-4 flex w-full flex-wrap items-center gap-3">
+            <div className="flex w-full flex-wrap items-center gap-2 px-1 pt-2">
               <a
                 href="https://www.youtube.com/watch?v=02UnSYEdlA8"
                 target="_blank"

@@ -120,7 +120,7 @@ export default function MyFramework() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://valhalla-fremwrok.space/"
+                    href="https://v0-valhalla-static-site-6np2jxb4r.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg shadow-blue-900/30"

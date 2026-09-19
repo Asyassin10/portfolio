@@ -393,7 +393,7 @@ export default function Projects() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Personal Projects" subtitle="Selected development projects" />
+        <SectionHeading title="Projects"  />
 
         {/* Featured Project Highlight */}
         <motion.div

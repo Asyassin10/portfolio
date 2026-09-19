@@ -9,20 +9,26 @@ import {
   SiDocker,
   SiFastapi,
   SiGithubactions,
+  SiGo,
+  SiJavascript,
   SiLangchain,
+  SiLaravel,
   SiLinux,
   SiModelcontextprotocol,
   SiMongodb,
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiOpenjdk,
   SiPhp,
   SiPodman,
   SiPostgresql,
+  SiPython,
   SiQdrant,
   SiReact,
   SiRedis,
   SiSpringboot,
+  SiTailwindcss,
 } from "react-icons/si"
 import {
   Bot,
@@ -82,7 +88,6 @@ type SkillCategory = {
   icon: LucideIcon
   tools: Tool[]
   tone: keyof typeof tones
-  className: string
 }
 
 const tones = {
@@ -128,7 +133,6 @@ const categories: SkillCategory[] = [
     title: "AI & LLM",
     icon: Brain,
     tone: "violet",
-    className: "lg:col-span-7",
     tools: [
       { name: "AWS Bedrock", icon: Cloud, brandIcon: FaAws, anchor: true },
       { name: "RAG", icon: Search, anchor: true },
@@ -143,39 +147,27 @@ const categories: SkillCategory[] = [
     title: "Backend",
     icon: Server,
     tone: "blue",
-    className: "lg:col-span-5",
     tools: [
-      { name: "PHP", icon: Server, brandIcon: SiPhp, anchor: true },
+      { name: "Laravel", icon: Server, brandIcon: SiLaravel, anchor: true },
       { name: "Spring Boot", icon: Layers3, brandIcon: SiSpringboot },
       { name: "Node.js", icon: Server, brandIcon: SiNodedotjs },
       { name: "FastAPI", icon: Server, brandIcon: SiFastapi },
-      { name: "REST APIs", icon: Network },
     ],
   },
   {
     title: "Frontend",
     icon: Monitor,
     tone: "emerald",
-    className: "lg:col-span-6",
     tools: [
       { name: "React.js", icon: Code2, brandIcon: SiReact, anchor: true },
       { name: "Next.js", icon: Monitor, brandIcon: SiNextdotjs, anchor: true },
-    ],
-  },
-  {
-    title: "Mobile",
-    icon: Smartphone,
-    tone: "emerald",
-    className: "lg:col-span-6",
-    tools: [
-      { name: "React Native", icon: Smartphone, brandIcon: SiReact, anchor: true },
+      { name: "Tailwind CSS", icon: Code2, brandIcon: SiTailwindcss },
     ],
   },
   {
     title: "Databases",
     icon: Database,
     tone: "rose",
-    className: "lg:col-span-6",
     tools: [
       { name: "PostgreSQL", icon: Database, brandIcon: SiPostgresql },
       { name: "MySQL", icon: Database, brandIcon: SiMysql },
@@ -187,13 +179,24 @@ const categories: SkillCategory[] = [
     title: "Tooling & Infra",
     icon: Wrench,
     tone: "cyan",
-    className: "lg:col-span-6",
     tools: [
       { name: "Docker", icon: Container, brandIcon: SiDocker },
       { name: "Podman", icon: Container, brandIcon: SiPodman },
       { name: "GitHub Actions", icon: Github, brandIcon: SiGithubactions },
       { name: "AWS", icon: Cloud, brandIcon: FaAws },
       { name: "Linux", icon: Terminal, brandIcon: SiLinux },
+    ],
+  },
+  {
+    title: "Languages",
+    icon: Code2,
+    tone: "blue",
+    tools: [
+      { name: "PHP", icon: Code2, brandIcon: SiPhp },
+      { name: "Python", icon: Code2, brandIcon: SiPython },
+      { name: "JavaScript", icon: Code2, brandIcon: SiJavascript },
+      { name: "Go", icon: Code2, brandIcon: SiGo },
+      { name: "Java", icon: Code2, brandIcon: SiOpenjdk },
     ],
   },
 ]
@@ -204,7 +207,7 @@ const SkillCard = ({ category, index }: { category: SkillCategory; index: number
 
   return (
     <motion.article
-      className={`group relative overflow-hidden rounded-3xl border bg-slate-900/65 p-5 shadow-xl shadow-slate-950/25 backdrop-blur-md transition-colors sm:p-6 ${tone.border} ${category.className}`}
+      className={`group relative h-full overflow-hidden rounded-3xl border bg-slate-900/65 p-5 shadow-xl shadow-slate-950/25 backdrop-blur-md transition-colors sm:p-6 ${tone.border}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -276,10 +279,10 @@ export default function About() {
                     <h2 className="font-display text-2xl font-bold text-white">Full-Stack &amp; GenAI Software Engineer</h2>
                   </div>
                   <p className="text-left text-lg leading-relaxed text-slate-300">
-                    With 4 years of experience, I&apos;ve grown from full-stack engineering — Laravel, Spring Boot, React/Next.js — into AI and machine learning: RAG pipelines, voice agents, MCP integrations, and the MLOps work that keeps models running in production, not just performing well in a notebook.
+                    With 4 years of experience, I started in full-stack engineering — Laravel, Spring Boot, React/Next.js — and have grown into GenAI: RAG pipelines, voice agents, and MCP integrations. I&apos;m now going deeper into the MLOps side, learning what it takes to keep these systems reliable once they&apos;re live, not just performing well in a notebook.
                   </p>
                   <p className="mt-4 text-left text-lg leading-relaxed text-slate-400">
-                    What hasn&apos;t changed is the mindset: clean architecture, systems that hold up under real traffic, and shipping things that work — not things that just demo well.
+                    The mindset hasn&apos;t changed: clean architecture, systems that hold up under real traffic, and shipping things that actually work.
                   </p>
                 </div>
               </div>
@@ -293,7 +296,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12">
+            <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
               {categories.map((category, index) => (
                 <SkillCard key={category.title} category={category} index={index} />
               ))}
