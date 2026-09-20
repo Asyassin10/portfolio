@@ -87,7 +87,7 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "GPS Fleet Management System",
           description:
-            "Supporting and improving a GPS fleet management platform tracking 1500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
+            "Supporting and improving a microservices-based GPS fleet management platform tracking 1500+ vehicles in real time, with geofencing, route optimization, and telematics — reducing manual fleet check-ins by ~40%.",
           links: [],
           images: [],
         },

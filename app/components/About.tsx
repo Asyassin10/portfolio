@@ -6,6 +6,7 @@ import type { LucideIcon } from "lucide-react"
 import type { IconType } from "react-icons"
 import { FaAws } from "react-icons/fa"
 import {
+  SiApachekafka,
   SiDocker,
   SiFastapi,
   SiGithubactions,
@@ -29,6 +30,7 @@ import {
   SiRedis,
   SiSpringboot,
   SiTailwindcss,
+  SiTerraform,
 } from "react-icons/si"
 import {
   Bot,
@@ -152,6 +154,7 @@ const categories: SkillCategory[] = [
       { name: "Spring Boot", icon: Layers3, brandIcon: SiSpringboot },
       { name: "Node.js", icon: Server, brandIcon: SiNodedotjs },
       { name: "FastAPI", icon: Server, brandIcon: SiFastapi },
+      { name: "Kafka", icon: Network, brandIcon: SiApachekafka },
     ],
   },
   {
@@ -183,6 +186,7 @@ const categories: SkillCategory[] = [
       { name: "Docker", icon: Container, brandIcon: SiDocker },
       { name: "Podman", icon: Container, brandIcon: SiPodman },
       { name: "GitHub Actions", icon: Github, brandIcon: SiGithubactions },
+      { name: "Terraform", icon: Wrench, brandIcon: SiTerraform },
       { name: "AWS", icon: Cloud, brandIcon: FaAws },
       { name: "Linux", icon: Terminal, brandIcon: SiLinux },
     ],
