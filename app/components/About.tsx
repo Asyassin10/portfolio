@@ -31,6 +31,7 @@ import {
   SiSpringboot,
   SiTailwindcss,
   SiTerraform,
+  SiWebrtc,
 } from "react-icons/si"
 import {
   Bot,
@@ -42,12 +43,15 @@ import {
   Database,
   Github,
   Layers3,
+  Mic,
   Monitor,
   Network,
+  Radio,
   Search,
   Server,
   Smartphone,
   Terminal,
+  Volume2,
   Wrench,
 } from "lucide-react"
 import SectionHeading from "./SectionHeading"
@@ -143,6 +147,9 @@ const categories: SkillCategory[] = [
       { name: "LangChain", icon: Brain, brandIcon: SiLangchain },
       { name: "Qdrant", icon: Database, brandIcon: SiQdrant },
       { name: "Voice agents", icon: Bot },
+      { name: "TTS", icon: Volume2 },
+      { name: "STT", icon: Mic },
+      { name: "WebRTC", icon: Radio, brandIcon: SiWebrtc },
     ],
   },
   {
