@@ -43,6 +43,8 @@ import {
   Database,
   Github,
   Layers3,
+  Linkedin,
+  Mail,
   Mic,
   Monitor,
   Network,
@@ -295,6 +297,33 @@ export default function About() {
                   <p className="mt-4 text-left text-lg leading-relaxed text-slate-400">
                     The mindset hasn&apos;t changed: clean architecture, systems that hold up under real traffic, and shipping things that actually work.
                   </p>
+                  <div className="mt-7 flex items-center gap-3 overflow-x-auto pb-2 whitespace-nowrap">
+                    <a
+                      href="https://www.linkedin.com/in/yacine-asb/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-100 transition hover:border-blue-400/50 hover:bg-blue-500/15"
+                    >
+                      <Linkedin className="h-4 w-4 text-blue-400" aria-hidden="true" />
+                      /in/yacine-asb
+                    </a>
+                    <a
+                      href="https://github.com/Asyassin10/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-indigo-400/25 bg-indigo-500/10 px-4 py-2 text-sm font-medium text-indigo-100 transition hover:border-indigo-400/50 hover:bg-indigo-500/15"
+                    >
+                      <Github className="h-4 w-4 text-indigo-300" aria-hidden="true" />
+                      Asyassin10
+                    </a>
+                    <a
+                      href="mailto:yassineaitsidibrahim@gmail.com"
+                      className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-400/50 hover:bg-emerald-500/15"
+                    >
+                      <Mail className="h-4 w-4 text-emerald-300" aria-hidden="true" />
+                      yassineaitsidibrahim@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

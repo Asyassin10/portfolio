@@ -30,7 +30,6 @@ const Navigation: React.FC = () => {
     { id: "medium", label: "Medium", icon: <BookOpen className="w-5 h-5" /> },
     { id: "languages", label: "Languages", icon: <Globe className="w-5 h-5" /> },
     { id: "contact", label: "Contact Me", icon: <Contact className="w-5 h-5" /> },
-
   ]
 
   useEffect(() => {

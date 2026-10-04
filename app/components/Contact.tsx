@@ -2,7 +2,7 @@
 
 import { useForm, ValidationError } from "@formspree/react"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 export default function Contact() {
@@ -24,34 +24,6 @@ export default function Contact() {
         >
           <div className="rounded-2xl border border-indigo-500/20 bg-slate-900/80 backdrop-blur-md p-6 sm:p-8">
             <div className="mb-8 text-center">            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-              <a
-                href="https://www.linkedin.com/in/yassine-brahim-0a91b23b5/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-blue-500/40 hover:bg-blue-500/10"
-              >
-                <Linkedin className="w-4 h-4 text-blue-400" />
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/Asyassin10/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-indigo-500/40 hover:bg-indigo-500/10"
-              >
-                <Github className="w-4 h-4 text-indigo-300" />
-                @Asyassin10
-              </a>
-              <a
-                href="mailto:yassineaitsidibrahim@gmail.com"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 transition hover:border-emerald-500/40 hover:bg-emerald-500/10"
-              >
-                <Mail className="w-4 h-4 text-emerald-300" />
-                yassineaitsidibrahim@gmail.com
-              </a>
-            </div>
 
             {state.succeeded ? (
               <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-4 text-emerald-200">
