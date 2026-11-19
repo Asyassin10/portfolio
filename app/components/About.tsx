@@ -276,11 +276,11 @@ export default function About() {
             <div className="rounded-3xl border border-indigo-500/20 bg-slate-900/70 p-6 backdrop-blur-md sm:p-8">
               <div className="grid items-center gap-8 lg:grid-cols-[0.78fr_1.22fr] xl:gap-10">
                 <div className="flex justify-center lg:justify-start">
-                  <div className="relative h-[360px] w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-indigo-500/30 bg-white shadow-2xl shadow-indigo-950/30 sm:h-[420px]">
+                  <div className="relative aspect-square w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-indigo-500/30 bg-white shadow-2xl shadow-indigo-950/30">
                     <img
                       src="/images/yassine-portrait-white.png"
                       alt="Yassine Ait Sidi Brahim portrait"
-                      className="h-full w-full object-cover object-[center_25%]"
+                      className="h-full w-full object-cover object-center"
                     />
                   </div>
                 </div>
