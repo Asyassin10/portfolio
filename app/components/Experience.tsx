@@ -80,7 +80,7 @@ const ExperienceComponent: React.FC = () => {
         {
           title: "MCP Fleet AI Integration",
           description:
-            "Built and maintained MCP (Model Context Protocol) integrations exposing fleet data to AI agents, enabling natural language queries across 10+ data sources including vehicles, trips, and alerts — cutting average query time from minutes to seconds.",
+            "Built and maintained Python and FastAPI services with MCP (Model Context Protocol) integrations exposing fleet data to AI agents, enabling natural language queries across 10+ data sources including vehicles, trips, and alerts — cutting average query time from minutes to seconds.",
           links: [],
           images: [],
         },
